@@ -1,5 +1,5 @@
 <template>
-    <div class="min-h-screen bg-linear-to-b bg-brand0 text-slate-100 flex items-center justify-center px-4">
+    <div class="min-h-screen bg-linear-to-b bg-brand2 text-slate-100 flex items-center justify-center px-4">
         <div class="max-w-2xl w-full text-center">
             <div
                 class="inline-flex items-center gap-2 px-3 py-1 mb-6 text-xs font-medium rounded-full border border-white/10 bg-white/5 backdrop-blur">
