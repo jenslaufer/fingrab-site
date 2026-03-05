@@ -19,15 +19,12 @@ jobs:
         
     - name: Install dependencies
       run: npm install
-      working-directory: site
 
     - name: Build
       run: npm run build
-      working-directory: site
 
     - name: Create CNAME file
       run: echo "fingrab.app" > ./dist/CNAME
-      working-directory: site
 
     - name: Deploy to main branch
       uses: peaceiris/actions-gh-pages@v4
