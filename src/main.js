@@ -2,10 +2,10 @@ import { createApp } from 'vue'
 import App from './App.vue'
 import './style.css'
 import { createHead } from '@unhead/vue/client'
-import { createWebHistory, createRouter } from 'vue-router'
+import { createWebHashHistory, createRouter } from 'vue-router'
 
 const router = createRouter({
-    history: createWebHistory(),
+    history: createWebHashHistory(),
     routes: [
         {
             path: '/',
