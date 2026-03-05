@@ -8,7 +8,7 @@ const router = createRouter({
     history: createWebHistory(),
     routes: [
         {
-            path: '',
+            path: '/',
             props: {
                 badge: 'FinGrab.app • Chrome Extension for Financial Data',
                 headline: 'Grab financial raw data–in seconds, with one click',

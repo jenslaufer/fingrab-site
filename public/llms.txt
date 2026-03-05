@@ -1,0 +1,39 @@
+# FinGrab — Yahoo Finance Data Exporter
+
+> FinGrab is a free Chrome extension that exports historical OHLCV financial data from Yahoo Finance as CSV with a single click. No signup required, setup in under 2 minutes. All processing happens locally in your browser — no server, no data collection.
+
+## What FinGrab Does
+
+FinGrab adds a floating overlay to Yahoo Finance quote pages (`finance.yahoo.com/quote/*`). Users select a time range and click to download historical data (Open, High, Low, Close, Volume) as a CSV file ready for Excel, Google Sheets, OpenOffice, or any analysis tool.
+
+**Free tier:** 15 exports
+**Paid tier:** Unlimited exports + extended time range access
+
+## Quick Links
+
+- [Install from Chrome Web Store](https://chromewebstore.google.com/detail/fingrab%E2%80%93yahoo-finance-exp/blajbhgoiomncfkpcfgiibcicifklgpm): Official extension download
+- [FinGrab.app](https://fingrab.app): Product website
+- [Privacy Policy](https://fingrab.app/privacy): Privacy and data handling details
+- [Contact](mailto:jens.laufer@solytics.de): Email support
+
+## How It Works
+
+1. Install the FinGrab extension from the Chrome Web Store
+2. Navigate to any Yahoo Finance quote page (e.g., finance.yahoo.com/quote/AAPL)
+3. A floating overlay appears on the page
+4. Select your desired time range and click download
+5. CSV file downloads directly to your computer
+
+All data extraction, processing, and file generation happens entirely in your browser. FinGrab does not send data to any server or collect usage statistics.
+
+## Pricing
+
+FinGrab operates on a freemium model:
+- **Free:** 15 CSV exports, standard time ranges
+- **Paid:** Unlimited exports, access to longer time ranges
+
+Payment is handled securely through ExtPay. No credit card is stored by FinGrab.
+
+## Contact
+
+For issues, feature requests, or inquiries: jens.laufer@solytics.de

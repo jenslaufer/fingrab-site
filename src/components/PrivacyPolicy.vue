@@ -45,15 +45,18 @@
                     <ul class="space-y-2 text-slate-300">
                         <li class="flex gap-3">
                             <span class="text-emerald-400 font-mono text-sm mt-0.5 shrink-0">sidePanel</span>
-                            <span>Opens the extension interface in Chrome's side panel. No data is read or transmitted.</span>
+                            <span>Opens the extension interface in Chrome's side panel. No data is read or
+                                transmitted.</span>
                         </li>
                         <li class="flex gap-3">
                             <span class="text-emerald-400 font-mono text-sm mt-0.5 shrink-0">activeTab</span>
-                            <span>Reads the URL of the active Yahoo Finance tab to extract the ticker symbol. The URL is used locally and never transmitted to FinGrab.</span>
+                            <span>Reads the URL of the active Yahoo Finance tab to extract the ticker symbol. The URL is
+                                used locally and never transmitted to FinGrab.</span>
                         </li>
                     </ul>
                     <p class="text-slate-300 leading-relaxed mt-3">
-                        The extension is active only on <span class="font-mono text-sm text-slate-200">finance.yahoo.com/quote/*</span> pages.
+                        The extension is active only on <span
+                            class="font-mono text-sm text-slate-200">finance.yahoo.com/quote/*</span> pages.
                     </p>
                 </section>
 
