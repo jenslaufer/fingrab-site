@@ -2,13 +2,13 @@ import { createApp } from 'vue'
 import App from './App.vue'
 import './style.css'
 import { createHead } from '@unhead/vue/client'
-import { createWebHashHistory, createRouter } from 'vue-router'
+import { createWebHistory, createRouter } from 'vue-router'
 
 const router = createRouter({
-    history: createWebHashHistory(),
+    history: createWebHistory(),
     routes: [
         {
-            path: '',
+            path: '/',
             props: {
                 badge: 'FinGrab.app • Chrome Extension for Financial Data',
                 headline: 'Grab financial raw data–in seconds, with one click',
@@ -19,6 +19,14 @@ const router = createRouter({
                 url: 'https://chromewebstore.google.com/detail/fingrab%E2%80%93yahoo-finance-exp/blajbhgoiomncfkpcfgiibcicifklgpm'
             },
             component: () => import('./components/Home.vue'),
+        },
+        {
+            path: '/privacy',
+            component: () => import('./components/PrivacyPolicy.vue'),
+        },
+        {
+            path: '/:pathMatch(.*)*',
+            redirect: '/',
         }
     ]
 })

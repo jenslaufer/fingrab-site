@@ -29,6 +29,10 @@
                     {{ ctaFooter }}
                 </div>
             </div>
+
+            <div class="mt-12 text-xs text-slate-500">
+                <router-link to="/privacy" class="hover:text-slate-300 underline underline-offset-2">Privacy Policy</router-link>
+            </div>
         </div>
     </div>
 </template>
