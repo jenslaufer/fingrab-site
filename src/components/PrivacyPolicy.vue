@@ -8,9 +8,7 @@
                 <span>Last updated: March 5, 2026</span>
             </div>
 
-            <h1 class="text-sm tracking-[0.25em] uppercase text-slate-400 mb-2">
-                <router-link to="/" class="hover:text-slate-200">FinGrab</router-link>
-            </h1>
+            <h1 class="text-sm tracking-[0.25em] uppercase text-slate-400 mb-2">FinGrab</h1>
             <h2 class="text-3xl sm:text-4xl font-semibold tracking-tight mb-4">Privacy Policy</h2>
             <p class="text-slate-300 leading-relaxed mb-12">
                 FinGrab is a Chrome extension that exports historical OHLCV data from Yahoo Finance as CSV.
@@ -47,20 +45,18 @@
                     <ul class="space-y-2 text-slate-300">
                         <li class="flex gap-3">
                             <span class="text-emerald-400 font-mono text-sm mt-0.5 shrink-0">sidePanel</span>
-                            <span>Opens the extension interface in Chrome's side panel. No data is read or transmitted.</span>
+                            <span>Opens the extension interface in Chrome's side panel. No data is read or
+                                transmitted.</span>
                         </li>
                         <li class="flex gap-3">
-                            <span class="text-emerald-400 font-mono text-sm mt-0.5 shrink-0">storage</span>
-                            <span>Stores payment status and export count locally in the browser. No data is transmitted externally.</span>
+                            <span class="text-emerald-400 font-mono text-sm mt-0.5 shrink-0">activeTab</span>
+                            <span>Reads the URL of the active Yahoo Finance tab to extract the ticker symbol. The URL is
+                                used locally and never transmitted to FinGrab.</span>
                         </li>
                     </ul>
                     <p class="text-slate-300 leading-relaxed mt-3">
-                        The extension declares host permissions for
-                        <span class="font-mono text-sm text-slate-200">finance.yahoo.com</span>,
-                        <span class="font-mono text-sm text-slate-200">query1.finance.yahoo.com</span>, and
-                        <span class="font-mono text-sm text-slate-200">query2.finance.yahoo.com</span>
-                        to inject the overlay UI and fetch OHLCV data. A content script runs only on
-                        <span class="font-mono text-sm text-slate-200">finance.yahoo.com/quote/*</span> pages.
+                        The extension is active only on <span
+                            class="font-mono text-sm text-slate-200">finance.yahoo.com/quote/*</span> pages.
                     </p>
                 </section>
 
