@@ -25,6 +25,14 @@ const router = createRouter({
             component: () => import('./components/PrivacyPolicy.vue'),
         },
         {
+            path: '/blog',
+            component: () => import('./components/BlogHome.vue'),
+        },
+        {
+            path: '/blog/:slug',
+            component: () => import('./components/BlogArticle.vue'),
+        },
+        {
             path: '/:pathMatch(.*)*',
             redirect: '/',
         }

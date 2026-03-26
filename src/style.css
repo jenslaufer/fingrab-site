@@ -14,3 +14,49 @@
   --color-brand1: #795cf5;
   --color-brand2: #5b3dd1;
 }
+
+.prose-blog {
+  @apply text-slate-300 leading-relaxed;
+}
+.prose-blog h2 {
+  @apply text-xl font-semibold text-slate-100 mt-10 mb-4;
+}
+.prose-blog h3 {
+  @apply text-lg font-semibold text-slate-200 mt-6 mb-3;
+}
+.prose-blog p {
+  @apply mb-4;
+}
+.prose-blog ul, .prose-blog ol {
+  @apply mb-4 pl-6;
+}
+.prose-blog ul {
+  @apply list-disc;
+}
+.prose-blog ol {
+  @apply list-decimal;
+}
+.prose-blog li {
+  @apply mb-1;
+}
+.prose-blog a {
+  @apply text-emerald-400 hover:text-emerald-300 underline underline-offset-2;
+}
+.prose-blog code {
+  @apply text-sm bg-white/10 px-1.5 py-0.5 rounded font-mono;
+}
+.prose-blog pre {
+  @apply mb-4 p-4 rounded-xl bg-white/5 border border-white/10 overflow-x-auto;
+}
+.prose-blog pre code {
+  @apply bg-transparent p-0;
+}
+.prose-blog table {
+  @apply w-full mb-4 text-sm;
+}
+.prose-blog th {
+  @apply text-left p-3 bg-white/10 font-semibold text-slate-200;
+}
+.prose-blog td {
+  @apply p-3 border-t border-white/10;
+}
