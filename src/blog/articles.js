@@ -41,6 +41,27 @@ export const articles = [
         date: '2026-03-26',
         component: () => import('../components/articles/YahooFinanceApiAlternatives.vue'),
     },
+    {
+        slug: 'download-stock-data-google-finance',
+        title: 'How to Download Stock Data from Google Finance',
+        description: 'All methods to download stock data from Google Finance: GOOGLEFINANCE() in Sheets, manual copy, and browser extensions like FinGrab for Yahoo Finance export.',
+        date: '2026-03-27',
+        component: () => import('../components/articles/DownloadStockDataGoogleFinance.vue'),
+    },
+    {
+        slug: 'technical-analysis-data-beginners',
+        title: 'Technical Analysis for Beginners: Getting Your Data Right',
+        description: 'Learn what OHLCV data you need for technical analysis, where to find free stock data, and how to get clean data into Excel or Python.',
+        date: '2026-03-27',
+        component: () => import('../components/articles/TechnicalAnalysisDataBeginners.vue'),
+    },
+    {
+        slug: 'compare-stock-performance-guide',
+        title: 'Compare Stock Performance: Side-by-Side Analysis Guide',
+        description: 'How to compare stocks side by side with normalized returns, Sharpe Ratio, and drawdown analysis. Includes Excel formulas and a practical workflow.',
+        date: '2026-03-27',
+        component: () => import('../components/articles/CompareStockPerformanceGuide.vue'),
+    },
 ]
 
 export function findArticle(slug) {

@@ -27,7 +27,7 @@ describe('BlogHome', () => {
     it('renders all article links', () => {
         const wrapper = mountBlogHome()
         const links = wrapper.findAll('a[href^="/blog/"]')
-        expect(links.length).toBe(6)
+        expect(links.length).toBe(9)
     })
 
     it('links to each article slug', () => {
@@ -39,5 +39,8 @@ describe('BlogHome', () => {
         expect(hrefs).toContain('/blog/best-free-stock-screeners')
         expect(hrefs).toContain('/blog/stock-portfolio-tracker-google-sheets')
         expect(hrefs).toContain('/blog/yahoo-finance-api-alternatives')
+        expect(hrefs).toContain('/blog/download-stock-data-google-finance')
+        expect(hrefs).toContain('/blog/technical-analysis-data-beginners')
+        expect(hrefs).toContain('/blog/compare-stock-performance-guide')
     })
 })
