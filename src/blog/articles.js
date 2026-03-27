@@ -20,6 +20,27 @@ export const articles = [
         date: '2026-03-26',
         component: () => import('../components/articles/ExcelStockAnalysis.vue'),
     },
+    {
+        slug: 'best-free-stock-screeners',
+        title: 'Best Free Stock Screeners 2026: Filter Stocks Like a Pro',
+        description: 'Compare the best free stock screeners including Finviz, Yahoo Finance, TradingView, and more. Find the right tool to filter stocks by fundamentals and technicals.',
+        date: '2026-03-26',
+        component: () => import('../components/articles/BestFreeStockScreeners.vue'),
+    },
+    {
+        slug: 'stock-portfolio-tracker-google-sheets',
+        title: 'How to Build a Stock Portfolio Tracker in Google Sheets',
+        description: 'Step-by-step guide to building a stock portfolio tracker in Google Sheets with live prices, dividend tracking, and performance charts.',
+        date: '2026-03-26',
+        component: () => import('../components/articles/StockPortfolioTrackerGoogleSheets.vue'),
+    },
+    {
+        slug: 'yahoo-finance-api-alternatives',
+        title: 'Yahoo Finance API Alternatives: Free Financial Data Sources',
+        description: 'Overview of free Yahoo Finance API alternatives including Alpha Vantage, Financial Modeling Prep, Twelve Data, and browser-based export tools.',
+        date: '2026-03-26',
+        component: () => import('../components/articles/YahooFinanceApiAlternatives.vue'),
+    },
 ]
 
 export function findArticle(slug) {

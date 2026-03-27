@@ -24,10 +24,10 @@ describe('BlogHome', () => {
         expect(wrapper.find('h1').text()).toBe('FinGrab Blog')
     })
 
-    it('renders all three article links', () => {
+    it('renders all article links', () => {
         const wrapper = mountBlogHome()
         const links = wrapper.findAll('a[href^="/blog/"]')
-        expect(links.length).toBe(3)
+        expect(links.length).toBe(6)
     })
 
     it('links to each article slug', () => {
@@ -36,5 +36,8 @@ describe('BlogHome', () => {
         expect(hrefs).toContain('/blog/export-yahoo-finance-csv')
         expect(hrefs).toContain('/blog/historical-stock-price-data')
         expect(hrefs).toContain('/blog/excel-stock-analysis')
+        expect(hrefs).toContain('/blog/best-free-stock-screeners')
+        expect(hrefs).toContain('/blog/stock-portfolio-tracker-google-sheets')
+        expect(hrefs).toContain('/blog/yahoo-finance-api-alternatives')
     })
 })
