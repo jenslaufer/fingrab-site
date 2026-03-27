@@ -91,8 +91,12 @@
         <a :href="ctaUrl" target="_blank" rel="noopener">Install FinGrab</a> from the Chrome Web Store, export
         your data as CSV, and have a working spreadsheet in minutes — no coding required.
     </p>
+
+    <RelatedArticles :slugs="['export-yahoo-finance-csv', 'historical-stock-price-data']" />
 </template>
 
 <script setup>
+import RelatedArticles from '../RelatedArticles.vue'
+
 const ctaUrl = 'https://chromewebstore.google.com/detail/fingrab'
 </script>
