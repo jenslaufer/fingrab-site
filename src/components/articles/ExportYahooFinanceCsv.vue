@@ -104,8 +104,12 @@ data.to_csv("aapl.csv")</code></pre>
         <a :href="ctaUrl" target="_blank" rel="noopener">Install FinGrab</a> and export your first dataset in
         under two minutes.
     </p>
+
+    <RelatedArticles :slugs="['historical-stock-price-data', 'excel-stock-analysis']" />
 </template>
 
 <script setup>
+import RelatedArticles from '../RelatedArticles.vue'
+
 const ctaUrl = 'https://chromewebstore.google.com/detail/fingrab'
 </script>

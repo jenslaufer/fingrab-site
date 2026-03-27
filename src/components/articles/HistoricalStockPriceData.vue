@@ -130,8 +130,12 @@
         <a :href="ctaUrl" target="_blank" rel="noopener">Install FinGrab</a> from the Chrome Web Store and download
         your first dataset in under two minutes.
     </p>
+
+    <RelatedArticles :slugs="['export-yahoo-finance-csv', 'excel-stock-analysis']" />
 </template>
 
 <script setup>
+import RelatedArticles from '../RelatedArticles.vue'
+
 const ctaUrl = 'https://chromewebstore.google.com/detail/fingrab'
 </script>
