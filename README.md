@@ -1,5 +1,43 @@
-# Vue 3 + Vite
+# FinGrab Site
 
-This template should help get you started developing with Vue 3 in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+Landing page and SEO blog for the FinGrab Chrome extension. Exports financial data from Yahoo Finance as CSV.
 
-Learn more about IDE Support for Vue in the [Vue Docs Scaling up Guide](https://vuejs.org/guide/scaling-up/tooling.html#ide-support).
+Live at [fingrab.app](https://fingrab.app).
+
+## Stack
+
+Vue 3 + Vite + Tailwind CSS v4 + Vue Router (hash mode) + @unhead/vue (SEO).
+
+## Structure
+
+```
+src/
+  components/
+    Home.vue              # Landing page (hero, features, FAQ, CTA)
+    BlogHome.vue          # Blog listing
+    BlogArticle.vue       # Article wrapper (dynamic routing)
+    RelatedArticles.vue   # Cross-linking component
+    PrivacyPolicy.vue
+    articles/             # 9 blog article components
+  blog/
+    articles.js           # Article metadata (slug, title, date)
+  main.js                 # Router config + content props
+  style.css               # Tailwind + prose styling
+```
+
+## Blog Articles (9)
+
+Stock data export, Excel analysis, portfolio tracking, stock screeners, Yahoo Finance API alternatives, Google Finance, technical analysis, performance comparison.
+
+## Development
+
+```bash
+npm install
+npm run dev       # Dev server
+npm run build     # Production build
+npm test          # Vitest (jsdom)
+```
+
+## Deployment
+
+GitHub Actions on push to `main` -> builds -> publishes to `site` branch -> GitHub Pages with CNAME `fingrab.app`.
