@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "Skill(merge-branch)",
+      "Skill(quality-gate)",
+      "Bash(git push:*)",
+      "Bash(gh pr:*)"
+    ]
+  }
+}
