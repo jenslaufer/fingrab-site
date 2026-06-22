@@ -12,8 +12,10 @@ from bingads.authorization import AuthorizationData, OAuthDesktopMobileAuthCodeG
 from bingads.service_client import ServiceClient
 from suds.plugin import MessagePlugin
 
-# Final URL for all ads: the Chrome Web Store listing (only store listing; Edge installs here too).
-STORE_URL = "https://chromewebstore.google.com/detail/fingrab%E2%80%93yahoo-finance-exp/blajbhgoiomncfkpcfgiibcicifklgpm"
+# Final URL for all ads: own landing page (advertiser-controlled domain — Microsoft
+# disapproves ads pointing straight at the third-party Chrome Web Store domain).
+# The page carries the "Add to Chrome" CTA and lets the UET tag fire for tracking.
+FINAL_URL = "https://fingrab.app/"
 
 
 class Prune(MessagePlugin):
@@ -132,6 +134,18 @@ res = S.AddCampaignCriterions(CampaignCriterions=arr("ArrayOfCampaignCriterion",
 show_errors("geo", res)
 print("Geo targets added:", ", ".join(GEO), "(presence)")
 
+# ---- Device bid adjustments: desktop tool -> down-bid mobile & tablet 80% ----
+dev_crits = []
+for dev in ("Smartphones", "Tablets"):
+    dc = f.create("DeviceCriterion"); dc.DeviceName = dev; dc.Type = "Device"
+    b = biddable(dc)
+    bm = f.create("BidMultiplier"); bm.Multiplier = -80.0; bm.Type = "BidMultiplier"
+    b.CriterionBid = bm
+    dev_crits.append(b)
+res = S.AddCampaignCriterions(CampaignCriterions=arr("ArrayOfCampaignCriterion", dev_crits, "CampaignCriterion"), CriterionType="Targets")
+show_errors("device", res)
+print("Device bid adjustments: Smartphones -80%, Tablets -80%")
+
 
 def add_ad_group(name, bid):
     ag = f.create("AdGroup")
@@ -157,7 +171,7 @@ def add_keywords(agid, exact, phrase):
     print(f"    keywords: {len(exact)} exact + {len(phrase)} phrase")
 
 
-def add_rsa(agid, headlines, descriptions, pinned_headline, path1, path2, final_url=STORE_URL):
+def add_rsa(agid, headlines, descriptions, pinned_headline, path1, path2, final_url=FINAL_URL):
     ad = f.create("ResponsiveSearchAd")
     ad.FinalUrls = strs([final_url])
     ad.Path1 = path1
