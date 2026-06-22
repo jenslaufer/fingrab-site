@@ -109,6 +109,29 @@ show_errors("campaign", res)
 campaign_id = res.CampaignIds.long[0]
 print("Campaign created (PAUSED):", campaign_id)
 
+# ---- Geo targeting US/UK/CA/AU/IE + presence intent ----
+# Location IDs verified via GetGeoLocationsFileUrl (Country rows).
+GEO = {"Australia": 9, "Canada": 32, "Ireland": 92, "United Kingdom": 188, "United States": 190}
+
+
+def biddable(crit):
+    b = f.create("BiddableCampaignCriterion")
+    b.CampaignId = campaign_id
+    b.Criterion = crit
+    b.Type = "BiddableCampaignCriterion"
+    return b
+
+
+geo_crits = []
+for lid in GEO.values():
+    lc = f.create("LocationCriterion"); lc.LocationId = lid; lc.Type = "Location"
+    geo_crits.append(biddable(lc))
+li = f.create("LocationIntentCriterion"); li.IntentOption = "PeopleIn"; li.Type = "LocationIntent"
+geo_crits.append(biddable(li))
+res = S.AddCampaignCriterions(CampaignCriterions=arr("ArrayOfCampaignCriterion", geo_crits, "CampaignCriterion"), CriterionType="Targets")
+show_errors("geo", res)
+print("Geo targets added:", ", ".join(GEO), "(presence)")
+
 
 def add_ad_group(name, bid):
     ag = f.create("AdGroup")
