@@ -9,7 +9,7 @@ source "$HOME/.secrets/stripe.env"
 source "$HOME/.secrets/telegram-assistant.env"
 set +a
 
-cd "$HOME/repos/fingrab-site/ads"
+cd "$HOME/repos/fingrab-site/marketing/ads/scripts"
 OUT="$(uv run --quiet profit_report.py 7 2>&1)"
 
 curl -s -X POST "https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage" \
