@@ -77,8 +77,30 @@
         </div>
     </section>
 
-    <!-- FAQ -->
+    <!-- Reviews / social proof -->
     <section class="bg-slate-950 text-slate-100 py-20 px-4">
+        <div class="max-w-4xl mx-auto">
+            <h2 class="text-2xl sm:text-3xl font-semibold text-center mb-4">Loved by analysts and investors</h2>
+            <p class="text-center text-sm text-slate-400 mb-12">Real reviews from the Chrome Web Store.</p>
+            <div class="grid md:grid-cols-2 gap-6">
+                <figure v-for="t in testimonials" :key="t.author"
+                        class="rounded-xl border border-white/10 bg-white/5 p-6">
+                    <div class="text-emerald-400 mb-3" aria-label="5 out of 5 stars">★★★★★</div>
+                    <blockquote class="text-slate-200 leading-relaxed">“{{ t.quote }}”</blockquote>
+                    <figcaption class="mt-4 text-sm text-slate-400">{{ t.author }} · Chrome Web Store</figcaption>
+                </figure>
+            </div>
+            <div class="text-center mt-10">
+                <a :href="reviewsUrl" target="_blank" rel="noopener"
+                   class="text-sm text-emerald-400 hover:text-emerald-300 underline underline-offset-2">
+                    Read all reviews on the Chrome Web Store
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="bg-slate-900 text-slate-100 py-20 px-4">
         <div class="max-w-2xl mx-auto">
             <h2 class="text-2xl sm:text-3xl font-semibold text-center mb-12">Frequently asked questions</h2>
             <div class="space-y-4">
@@ -127,6 +149,14 @@ useHead({
     title: `${props.productName}–${props.headline}`,
 })
 
+// Verbatim 5-star reviews from the Chrome Web Store listing.
+const testimonials = [
+    { quote: 'This is exactly what I needed. It just works :)', author: 'Robert El Hussein' },
+    { quote: 'it worked for me', author: 'Helen Blackburn' },
+]
+
+const reviewsUrl = props.url ? `${props.url}/reviews` : '#'
+
 const steps = [
     { title: 'Install the extension', desc: 'Add FinGrab from the Chrome Web Store. Takes less than a minute.' },
     { title: 'Open Yahoo Finance', desc: 'Navigate to any stock, ETF, or index on finance.yahoo.com.' },
@@ -148,7 +178,7 @@ const useCases = [
 ]
 
 const faqs = [
-    { q: 'Is FinGrab free?', a: 'Yes. The free tier includes basic exports. Premium features are available for power users.' },
+    { q: 'Is FinGrab free?', a: 'Yes — 15 free exports with full access to all time ranges and intervals. No signup required. Need more? Upgrade to unlock unlimited downloads.' },
     { q: 'What data formats are supported?', a: 'CSV files compatible with Excel, Google Sheets, LibreOffice, Numbers, and any analysis tool that reads CSV.' },
     { q: 'Does it work with all Yahoo Finance pages?', a: 'FinGrab works with individual stock, ETF, and index pages on finance.yahoo.com.' },
     { q: 'Is my data stored anywhere?', a: 'No. All processing happens locally in your browser. No data is sent to external servers.' },
