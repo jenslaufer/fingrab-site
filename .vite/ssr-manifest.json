@@ -1,0 +1,347 @@
+{
+  "\u0000plugin-vue:export-helper": [
+    "/assets/merriweather-cyrillic-ext-wght-normal-Bkm5NjZG.woff2",
+    "/assets/merriweather-cyrillic-wght-normal-BWxnF87P.woff2",
+    "/assets/merriweather-vietnamese-wght-normal-BXYScXBD.woff2",
+    "/assets/merriweather-latin-ext-wght-normal-BZx4mOJf.woff2",
+    "/assets/merriweather-latin-wght-normal-BovdrKvB.woff2",
+    "/assets/montserrat-cyrillic-ext-wght-normal-CO5hGrJv.woff2",
+    "/assets/montserrat-cyrillic-wght-normal-EAA9jha_.woff2",
+    "/assets/montserrat-vietnamese-wght-normal-k7S-YeeD.woff2",
+    "/assets/montserrat-latin-ext-wght-normal-BsZE-iaG.woff2",
+    "/assets/montserrat-latin-wght-normal-l_AIctKy.woff2"
+  ],
+  "\u0000vite/modulepreload-polyfill.js": [
+    "/assets/merriweather-cyrillic-ext-wght-normal-Bkm5NjZG.woff2",
+    "/assets/merriweather-cyrillic-wght-normal-BWxnF87P.woff2",
+    "/assets/merriweather-vietnamese-wght-normal-BXYScXBD.woff2",
+    "/assets/merriweather-latin-ext-wght-normal-BZx4mOJf.woff2",
+    "/assets/merriweather-latin-wght-normal-BovdrKvB.woff2",
+    "/assets/montserrat-cyrillic-ext-wght-normal-CO5hGrJv.woff2",
+    "/assets/montserrat-cyrillic-wght-normal-EAA9jha_.woff2",
+    "/assets/montserrat-vietnamese-wght-normal-k7S-YeeD.woff2",
+    "/assets/montserrat-latin-ext-wght-normal-BsZE-iaG.woff2",
+    "/assets/montserrat-latin-wght-normal-l_AIctKy.woff2"
+  ],
+  "\u0000vite/preload-helper.js": [
+    "/assets/merriweather-cyrillic-ext-wght-normal-Bkm5NjZG.woff2",
+    "/assets/merriweather-cyrillic-wght-normal-BWxnF87P.woff2",
+    "/assets/merriweather-vietnamese-wght-normal-BXYScXBD.woff2",
+    "/assets/merriweather-latin-ext-wght-normal-BZx4mOJf.woff2",
+    "/assets/merriweather-latin-wght-normal-BovdrKvB.woff2",
+    "/assets/montserrat-cyrillic-ext-wght-normal-CO5hGrJv.woff2",
+    "/assets/montserrat-cyrillic-wght-normal-EAA9jha_.woff2",
+    "/assets/montserrat-vietnamese-wght-normal-k7S-YeeD.woff2",
+    "/assets/montserrat-latin-ext-wght-normal-BsZE-iaG.woff2",
+    "/assets/montserrat-latin-wght-normal-l_AIctKy.woff2"
+  ],
+  "index.html": [
+    "/assets/merriweather-cyrillic-ext-wght-normal-Bkm5NjZG.woff2",
+    "/assets/merriweather-cyrillic-wght-normal-BWxnF87P.woff2",
+    "/assets/merriweather-vietnamese-wght-normal-BXYScXBD.woff2",
+    "/assets/merriweather-latin-ext-wght-normal-BZx4mOJf.woff2",
+    "/assets/merriweather-latin-wght-normal-BovdrKvB.woff2",
+    "/assets/montserrat-cyrillic-ext-wght-normal-CO5hGrJv.woff2",
+    "/assets/montserrat-cyrillic-wght-normal-EAA9jha_.woff2",
+    "/assets/montserrat-vietnamese-wght-normal-k7S-YeeD.woff2",
+    "/assets/montserrat-latin-ext-wght-normal-BsZE-iaG.woff2",
+    "/assets/montserrat-latin-wght-normal-l_AIctKy.woff2"
+  ],
+  "node_modules/@unhead/vue/dist/client.mjs": [
+    "/assets/merriweather-cyrillic-ext-wght-normal-Bkm5NjZG.woff2",
+    "/assets/merriweather-cyrillic-wght-normal-BWxnF87P.woff2",
+    "/assets/merriweather-vietnamese-wght-normal-BXYScXBD.woff2",
+    "/assets/merriweather-latin-ext-wght-normal-BZx4mOJf.woff2",
+    "/assets/merriweather-latin-wght-normal-BovdrKvB.woff2",
+    "/assets/montserrat-cyrillic-ext-wght-normal-CO5hGrJv.woff2",
+    "/assets/montserrat-cyrillic-wght-normal-EAA9jha_.woff2",
+    "/assets/montserrat-vietnamese-wght-normal-k7S-YeeD.woff2",
+    "/assets/montserrat-latin-ext-wght-normal-BsZE-iaG.woff2",
+    "/assets/montserrat-latin-wght-normal-l_AIctKy.woff2"
+  ],
+  "node_modules/@unhead/vue/dist/shared/vue.Cr7xSEtD.mjs": [
+    "/assets/merriweather-cyrillic-ext-wght-normal-Bkm5NjZG.woff2",
+    "/assets/merriweather-cyrillic-wght-normal-BWxnF87P.woff2",
+    "/assets/merriweather-vietnamese-wght-normal-BXYScXBD.woff2",
+    "/assets/merriweather-latin-ext-wght-normal-BZx4mOJf.woff2",
+    "/assets/merriweather-latin-wght-normal-BovdrKvB.woff2",
+    "/assets/montserrat-cyrillic-ext-wght-normal-CO5hGrJv.woff2",
+    "/assets/montserrat-cyrillic-wght-normal-EAA9jha_.woff2",
+    "/assets/montserrat-vietnamese-wght-normal-k7S-YeeD.woff2",
+    "/assets/montserrat-latin-ext-wght-normal-BsZE-iaG.woff2",
+    "/assets/montserrat-latin-wght-normal-l_AIctKy.woff2"
+  ],
+  "node_modules/@unhead/vue/dist/shared/vue.N9zWjxoK.mjs": [
+    "/assets/merriweather-cyrillic-ext-wght-normal-Bkm5NjZG.woff2",
+    "/assets/merriweather-cyrillic-wght-normal-BWxnF87P.woff2",
+    "/assets/merriweather-vietnamese-wght-normal-BXYScXBD.woff2",
+    "/assets/merriweather-latin-ext-wght-normal-BZx4mOJf.woff2",
+    "/assets/merriweather-latin-wght-normal-BovdrKvB.woff2",
+    "/assets/montserrat-cyrillic-ext-wght-normal-CO5hGrJv.woff2",
+    "/assets/montserrat-cyrillic-wght-normal-EAA9jha_.woff2",
+    "/assets/montserrat-vietnamese-wght-normal-k7S-YeeD.woff2",
+    "/assets/montserrat-latin-ext-wght-normal-BsZE-iaG.woff2",
+    "/assets/montserrat-latin-wght-normal-l_AIctKy.woff2"
+  ],
+  "node_modules/@vue/reactivity/dist/reactivity.esm-bundler.js": [
+    "/assets/merriweather-cyrillic-ext-wght-normal-Bkm5NjZG.woff2",
+    "/assets/merriweather-cyrillic-wght-normal-BWxnF87P.woff2",
+    "/assets/merriweather-vietnamese-wght-normal-BXYScXBD.woff2",
+    "/assets/merriweather-latin-ext-wght-normal-BZx4mOJf.woff2",
+    "/assets/merriweather-latin-wght-normal-BovdrKvB.woff2",
+    "/assets/montserrat-cyrillic-ext-wght-normal-CO5hGrJv.woff2",
+    "/assets/montserrat-cyrillic-wght-normal-EAA9jha_.woff2",
+    "/assets/montserrat-vietnamese-wght-normal-k7S-YeeD.woff2",
+    "/assets/montserrat-latin-ext-wght-normal-BsZE-iaG.woff2",
+    "/assets/montserrat-latin-wght-normal-l_AIctKy.woff2"
+  ],
+  "node_modules/@vue/runtime-core/dist/runtime-core.esm-bundler.js": [
+    "/assets/merriweather-cyrillic-ext-wght-normal-Bkm5NjZG.woff2",
+    "/assets/merriweather-cyrillic-wght-normal-BWxnF87P.woff2",
+    "/assets/merriweather-vietnamese-wght-normal-BXYScXBD.woff2",
+    "/assets/merriweather-latin-ext-wght-normal-BZx4mOJf.woff2",
+    "/assets/merriweather-latin-wght-normal-BovdrKvB.woff2",
+    "/assets/montserrat-cyrillic-ext-wght-normal-CO5hGrJv.woff2",
+    "/assets/montserrat-cyrillic-wght-normal-EAA9jha_.woff2",
+    "/assets/montserrat-vietnamese-wght-normal-k7S-YeeD.woff2",
+    "/assets/montserrat-latin-ext-wght-normal-BsZE-iaG.woff2",
+    "/assets/montserrat-latin-wght-normal-l_AIctKy.woff2"
+  ],
+  "node_modules/@vue/runtime-dom/dist/runtime-dom.esm-bundler.js": [
+    "/assets/merriweather-cyrillic-ext-wght-normal-Bkm5NjZG.woff2",
+    "/assets/merriweather-cyrillic-wght-normal-BWxnF87P.woff2",
+    "/assets/merriweather-vietnamese-wght-normal-BXYScXBD.woff2",
+    "/assets/merriweather-latin-ext-wght-normal-BZx4mOJf.woff2",
+    "/assets/merriweather-latin-wght-normal-BovdrKvB.woff2",
+    "/assets/montserrat-cyrillic-ext-wght-normal-CO5hGrJv.woff2",
+    "/assets/montserrat-cyrillic-wght-normal-EAA9jha_.woff2",
+    "/assets/montserrat-vietnamese-wght-normal-k7S-YeeD.woff2",
+    "/assets/montserrat-latin-ext-wght-normal-BsZE-iaG.woff2",
+    "/assets/montserrat-latin-wght-normal-l_AIctKy.woff2"
+  ],
+  "node_modules/@vue/shared/dist/shared.esm-bundler.js": [
+    "/assets/merriweather-cyrillic-ext-wght-normal-Bkm5NjZG.woff2",
+    "/assets/merriweather-cyrillic-wght-normal-BWxnF87P.woff2",
+    "/assets/merriweather-vietnamese-wght-normal-BXYScXBD.woff2",
+    "/assets/merriweather-latin-ext-wght-normal-BZx4mOJf.woff2",
+    "/assets/merriweather-latin-wght-normal-BovdrKvB.woff2",
+    "/assets/montserrat-cyrillic-ext-wght-normal-CO5hGrJv.woff2",
+    "/assets/montserrat-cyrillic-wght-normal-EAA9jha_.woff2",
+    "/assets/montserrat-vietnamese-wght-normal-k7S-YeeD.woff2",
+    "/assets/montserrat-latin-ext-wght-normal-BsZE-iaG.woff2",
+    "/assets/montserrat-latin-wght-normal-l_AIctKy.woff2"
+  ],
+  "node_modules/hookable/dist/index.mjs": [
+    "/assets/merriweather-cyrillic-ext-wght-normal-Bkm5NjZG.woff2",
+    "/assets/merriweather-cyrillic-wght-normal-BWxnF87P.woff2",
+    "/assets/merriweather-vietnamese-wght-normal-BXYScXBD.woff2",
+    "/assets/merriweather-latin-ext-wght-normal-BZx4mOJf.woff2",
+    "/assets/merriweather-latin-wght-normal-BovdrKvB.woff2",
+    "/assets/montserrat-cyrillic-ext-wght-normal-CO5hGrJv.woff2",
+    "/assets/montserrat-cyrillic-wght-normal-EAA9jha_.woff2",
+    "/assets/montserrat-vietnamese-wght-normal-k7S-YeeD.woff2",
+    "/assets/montserrat-latin-ext-wght-normal-BsZE-iaG.woff2",
+    "/assets/montserrat-latin-wght-normal-l_AIctKy.woff2"
+  ],
+  "node_modules/unhead/dist/client.mjs": [
+    "/assets/merriweather-cyrillic-ext-wght-normal-Bkm5NjZG.woff2",
+    "/assets/merriweather-cyrillic-wght-normal-BWxnF87P.woff2",
+    "/assets/merriweather-vietnamese-wght-normal-BXYScXBD.woff2",
+    "/assets/merriweather-latin-ext-wght-normal-BZx4mOJf.woff2",
+    "/assets/merriweather-latin-wght-normal-BovdrKvB.woff2",
+    "/assets/montserrat-cyrillic-ext-wght-normal-CO5hGrJv.woff2",
+    "/assets/montserrat-cyrillic-wght-normal-EAA9jha_.woff2",
+    "/assets/montserrat-vietnamese-wght-normal-k7S-YeeD.woff2",
+    "/assets/montserrat-latin-ext-wght-normal-BsZE-iaG.woff2",
+    "/assets/montserrat-latin-wght-normal-l_AIctKy.woff2"
+  ],
+  "node_modules/unhead/dist/shared/unhead.CbpEuj3y.mjs": [
+    "/assets/merriweather-cyrillic-ext-wght-normal-Bkm5NjZG.woff2",
+    "/assets/merriweather-cyrillic-wght-normal-BWxnF87P.woff2",
+    "/assets/merriweather-vietnamese-wght-normal-BXYScXBD.woff2",
+    "/assets/merriweather-latin-ext-wght-normal-BZx4mOJf.woff2",
+    "/assets/merriweather-latin-wght-normal-BovdrKvB.woff2",
+    "/assets/montserrat-cyrillic-ext-wght-normal-CO5hGrJv.woff2",
+    "/assets/montserrat-cyrillic-wght-normal-EAA9jha_.woff2",
+    "/assets/montserrat-vietnamese-wght-normal-k7S-YeeD.woff2",
+    "/assets/montserrat-latin-ext-wght-normal-BsZE-iaG.woff2",
+    "/assets/montserrat-latin-wght-normal-l_AIctKy.woff2"
+  ],
+  "node_modules/unhead/dist/shared/unhead.D_nrZZPH.mjs": [
+    "/assets/merriweather-cyrillic-ext-wght-normal-Bkm5NjZG.woff2",
+    "/assets/merriweather-cyrillic-wght-normal-BWxnF87P.woff2",
+    "/assets/merriweather-vietnamese-wght-normal-BXYScXBD.woff2",
+    "/assets/merriweather-latin-ext-wght-normal-BZx4mOJf.woff2",
+    "/assets/merriweather-latin-wght-normal-BovdrKvB.woff2",
+    "/assets/montserrat-cyrillic-ext-wght-normal-CO5hGrJv.woff2",
+    "/assets/montserrat-cyrillic-wght-normal-EAA9jha_.woff2",
+    "/assets/montserrat-vietnamese-wght-normal-k7S-YeeD.woff2",
+    "/assets/montserrat-latin-ext-wght-normal-BsZE-iaG.woff2",
+    "/assets/montserrat-latin-wght-normal-l_AIctKy.woff2"
+  ],
+  "node_modules/unhead/dist/shared/unhead.fVVqDC1O.mjs": [
+    "/assets/merriweather-cyrillic-ext-wght-normal-Bkm5NjZG.woff2",
+    "/assets/merriweather-cyrillic-wght-normal-BWxnF87P.woff2",
+    "/assets/merriweather-vietnamese-wght-normal-BXYScXBD.woff2",
+    "/assets/merriweather-latin-ext-wght-normal-BZx4mOJf.woff2",
+    "/assets/merriweather-latin-wght-normal-BovdrKvB.woff2",
+    "/assets/montserrat-cyrillic-ext-wght-normal-CO5hGrJv.woff2",
+    "/assets/montserrat-cyrillic-wght-normal-EAA9jha_.woff2",
+    "/assets/montserrat-vietnamese-wght-normal-k7S-YeeD.woff2",
+    "/assets/montserrat-latin-ext-wght-normal-BsZE-iaG.woff2",
+    "/assets/montserrat-latin-wght-normal-l_AIctKy.woff2"
+  ],
+  "node_modules/unhead/dist/shared/unhead.yem5I2v_.mjs": [
+    "/assets/merriweather-cyrillic-ext-wght-normal-Bkm5NjZG.woff2",
+    "/assets/merriweather-cyrillic-wght-normal-BWxnF87P.woff2",
+    "/assets/merriweather-vietnamese-wght-normal-BXYScXBD.woff2",
+    "/assets/merriweather-latin-ext-wght-normal-BZx4mOJf.woff2",
+    "/assets/merriweather-latin-wght-normal-BovdrKvB.woff2",
+    "/assets/montserrat-cyrillic-ext-wght-normal-CO5hGrJv.woff2",
+    "/assets/montserrat-cyrillic-wght-normal-EAA9jha_.woff2",
+    "/assets/montserrat-vietnamese-wght-normal-k7S-YeeD.woff2",
+    "/assets/montserrat-latin-ext-wght-normal-BsZE-iaG.woff2",
+    "/assets/montserrat-latin-wght-normal-l_AIctKy.woff2"
+  ],
+  "node_modules/vite-ssg/dist/index.mjs": [
+    "/assets/merriweather-cyrillic-ext-wght-normal-Bkm5NjZG.woff2",
+    "/assets/merriweather-cyrillic-wght-normal-BWxnF87P.woff2",
+    "/assets/merriweather-vietnamese-wght-normal-BXYScXBD.woff2",
+    "/assets/merriweather-latin-ext-wght-normal-BZx4mOJf.woff2",
+    "/assets/merriweather-latin-wght-normal-BovdrKvB.woff2",
+    "/assets/montserrat-cyrillic-ext-wght-normal-CO5hGrJv.woff2",
+    "/assets/montserrat-cyrillic-wght-normal-EAA9jha_.woff2",
+    "/assets/montserrat-vietnamese-wght-normal-k7S-YeeD.woff2",
+    "/assets/montserrat-latin-ext-wght-normal-BsZE-iaG.woff2",
+    "/assets/montserrat-latin-wght-normal-l_AIctKy.woff2"
+  ],
+  "node_modules/vite-ssg/dist/shared/vite-ssg.C6pK7rvr.mjs": [
+    "/assets/merriweather-cyrillic-ext-wght-normal-Bkm5NjZG.woff2",
+    "/assets/merriweather-cyrillic-wght-normal-BWxnF87P.woff2",
+    "/assets/merriweather-vietnamese-wght-normal-BXYScXBD.woff2",
+    "/assets/merriweather-latin-ext-wght-normal-BZx4mOJf.woff2",
+    "/assets/merriweather-latin-wght-normal-BovdrKvB.woff2",
+    "/assets/montserrat-cyrillic-ext-wght-normal-CO5hGrJv.woff2",
+    "/assets/montserrat-cyrillic-wght-normal-EAA9jha_.woff2",
+    "/assets/montserrat-vietnamese-wght-normal-k7S-YeeD.woff2",
+    "/assets/montserrat-latin-ext-wght-normal-BsZE-iaG.woff2",
+    "/assets/montserrat-latin-wght-normal-l_AIctKy.woff2"
+  ],
+  "node_modules/vite-ssg/dist/shared/vite-ssg.ETIvV-80.mjs": [
+    "/assets/merriweather-cyrillic-ext-wght-normal-Bkm5NjZG.woff2",
+    "/assets/merriweather-cyrillic-wght-normal-BWxnF87P.woff2",
+    "/assets/merriweather-vietnamese-wght-normal-BXYScXBD.woff2",
+    "/assets/merriweather-latin-ext-wght-normal-BZx4mOJf.woff2",
+    "/assets/merriweather-latin-wght-normal-BovdrKvB.woff2",
+    "/assets/montserrat-cyrillic-ext-wght-normal-CO5hGrJv.woff2",
+    "/assets/montserrat-cyrillic-wght-normal-EAA9jha_.woff2",
+    "/assets/montserrat-vietnamese-wght-normal-k7S-YeeD.woff2",
+    "/assets/montserrat-latin-ext-wght-normal-BsZE-iaG.woff2",
+    "/assets/montserrat-latin-wght-normal-l_AIctKy.woff2"
+  ],
+  "node_modules/vue-router/dist/devtools-EWN81iOl.mjs": [
+    "/assets/merriweather-cyrillic-ext-wght-normal-Bkm5NjZG.woff2",
+    "/assets/merriweather-cyrillic-wght-normal-BWxnF87P.woff2",
+    "/assets/merriweather-vietnamese-wght-normal-BXYScXBD.woff2",
+    "/assets/merriweather-latin-ext-wght-normal-BZx4mOJf.woff2",
+    "/assets/merriweather-latin-wght-normal-BovdrKvB.woff2",
+    "/assets/montserrat-cyrillic-ext-wght-normal-CO5hGrJv.woff2",
+    "/assets/montserrat-cyrillic-wght-normal-EAA9jha_.woff2",
+    "/assets/montserrat-vietnamese-wght-normal-k7S-YeeD.woff2",
+    "/assets/montserrat-latin-ext-wght-normal-BsZE-iaG.woff2",
+    "/assets/montserrat-latin-wght-normal-l_AIctKy.woff2"
+  ],
+  "node_modules/vue-router/dist/vue-router.mjs": [
+    "/assets/merriweather-cyrillic-ext-wght-normal-Bkm5NjZG.woff2",
+    "/assets/merriweather-cyrillic-wght-normal-BWxnF87P.woff2",
+    "/assets/merriweather-vietnamese-wght-normal-BXYScXBD.woff2",
+    "/assets/merriweather-latin-ext-wght-normal-BZx4mOJf.woff2",
+    "/assets/merriweather-latin-wght-normal-BovdrKvB.woff2",
+    "/assets/montserrat-cyrillic-ext-wght-normal-CO5hGrJv.woff2",
+    "/assets/montserrat-cyrillic-wght-normal-EAA9jha_.woff2",
+    "/assets/montserrat-vietnamese-wght-normal-k7S-YeeD.woff2",
+    "/assets/montserrat-latin-ext-wght-normal-BsZE-iaG.woff2",
+    "/assets/montserrat-latin-wght-normal-l_AIctKy.woff2"
+  ],
+  "src/App.vue": [
+    "/assets/merriweather-cyrillic-ext-wght-normal-Bkm5NjZG.woff2",
+    "/assets/merriweather-cyrillic-wght-normal-BWxnF87P.woff2",
+    "/assets/merriweather-vietnamese-wght-normal-BXYScXBD.woff2",
+    "/assets/merriweather-latin-ext-wght-normal-BZx4mOJf.woff2",
+    "/assets/merriweather-latin-wght-normal-BovdrKvB.woff2",
+    "/assets/montserrat-cyrillic-ext-wght-normal-CO5hGrJv.woff2",
+    "/assets/montserrat-cyrillic-wght-normal-EAA9jha_.woff2",
+    "/assets/montserrat-vietnamese-wght-normal-k7S-YeeD.woff2",
+    "/assets/montserrat-latin-ext-wght-normal-BsZE-iaG.woff2",
+    "/assets/montserrat-latin-wght-normal-l_AIctKy.woff2"
+  ],
+  "src/blog/articles.js": [
+    "/assets/articles-DhGbSBW4.js"
+  ],
+  "src/components/BlogArticle.vue": [
+    "/assets/BlogArticle-akxoSkPg.js"
+  ],
+  "src/components/BlogHome.vue": [
+    "/assets/BlogHome-aRIfBIxT.js"
+  ],
+  "src/components/Home.vue": [
+    "/assets/Home-nMC7_AF2.js"
+  ],
+  "src/components/PrivacyPolicy.vue": [
+    "/assets/PrivacyPolicy-3sASKwF0.js"
+  ],
+  "src/components/RelatedArticles.vue": [
+    "/assets/RelatedArticles-DwdmREL7.js"
+  ],
+  "src/components/articles/BestFreeStockScreeners.vue": [
+    "/assets/BestFreeStockScreeners-D9-4H1Y9.js"
+  ],
+  "src/components/articles/CompareStockPerformanceGuide.vue": [
+    "/assets/CompareStockPerformanceGuide-Bz5nwb8x.js"
+  ],
+  "src/components/articles/DownloadStockDataGoogleFinance.vue": [
+    "/assets/DownloadStockDataGoogleFinance-C_sffv5l.js"
+  ],
+  "src/components/articles/ExcelStockAnalysis.vue": [
+    "/assets/ExcelStockAnalysis-BGEvrQiC.js"
+  ],
+  "src/components/articles/ExportYahooFinanceCsv.vue": [
+    "/assets/ExportYahooFinanceCsv-CtjlAGGr.js"
+  ],
+  "src/components/articles/HistoricalStockPriceData.vue": [
+    "/assets/HistoricalStockPriceData-Do1P6y8_.js"
+  ],
+  "src/components/articles/StockPortfolioTrackerGoogleSheets.vue": [
+    "/assets/StockPortfolioTrackerGoogleSheets-BMw5LJYF.js"
+  ],
+  "src/components/articles/TechnicalAnalysisDataBeginners.vue": [
+    "/assets/TechnicalAnalysisDataBeginners-DGqNilOK.js"
+  ],
+  "src/components/articles/YahooFinanceApiAlternatives.vue": [
+    "/assets/YahooFinanceApiAlternatives-DmmAN0NO.js"
+  ],
+  "src/main.js": [
+    "/assets/merriweather-cyrillic-ext-wght-normal-Bkm5NjZG.woff2",
+    "/assets/merriweather-cyrillic-wght-normal-BWxnF87P.woff2",
+    "/assets/merriweather-vietnamese-wght-normal-BXYScXBD.woff2",
+    "/assets/merriweather-latin-ext-wght-normal-BZx4mOJf.woff2",
+    "/assets/merriweather-latin-wght-normal-BovdrKvB.woff2",
+    "/assets/montserrat-cyrillic-ext-wght-normal-CO5hGrJv.woff2",
+    "/assets/montserrat-cyrillic-wght-normal-EAA9jha_.woff2",
+    "/assets/montserrat-vietnamese-wght-normal-k7S-YeeD.woff2",
+    "/assets/montserrat-latin-ext-wght-normal-BsZE-iaG.woff2",
+    "/assets/montserrat-latin-wght-normal-l_AIctKy.woff2"
+  ],
+  "src/style.css": [
+    "/assets/merriweather-cyrillic-ext-wght-normal-Bkm5NjZG.woff2",
+    "/assets/merriweather-cyrillic-wght-normal-BWxnF87P.woff2",
+    "/assets/merriweather-vietnamese-wght-normal-BXYScXBD.woff2",
+    "/assets/merriweather-latin-ext-wght-normal-BZx4mOJf.woff2",
+    "/assets/merriweather-latin-wght-normal-BovdrKvB.woff2",
+    "/assets/montserrat-cyrillic-ext-wght-normal-CO5hGrJv.woff2",
+    "/assets/montserrat-cyrillic-wght-normal-EAA9jha_.woff2",
+    "/assets/montserrat-vietnamese-wght-normal-k7S-YeeD.woff2",
+    "/assets/montserrat-latin-ext-wght-normal-BsZE-iaG.woff2",
+    "/assets/montserrat-latin-wght-normal-l_AIctKy.woff2"
+  ]
+}
