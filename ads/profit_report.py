@@ -26,7 +26,9 @@ import stripe
 
 DAYS = int(sys.argv[1]) if len(sys.argv) > 1 else 7
 CAMP_NAME = "FinGrab | Search | MS | EN-Finance"
+APITEST_AG = "API Replacement"  # learning-test ad group: does the "API replacement / no-code" message draw clicks?
 ASSUMED_LTV_EUR = 60.0  # $9/mo, ~8mo retention, minus Stripe fees — adjust as real data arrives
+PREDEF_TIME = {7: "LastSevenDays", 30: "LastThirtyDays"}.get(DAYS, "LastSevenDays")
 
 
 class Prune(MessagePlugin):
@@ -42,7 +44,7 @@ class Prune(MessagePlugin):
             el.detach()
 
 
-def bing_spend():
+def bing_client():
     AID = int(os.environ["BING_ADS_ACCOUNT_ID"])
     auth = OAuthDesktopMobileAuthCodeGrant(client_id=os.environ["BING_ADS_CLIENT_ID"], env="production", oauth_scope="msads.manage")
     auth.request_oauth_tokens_by_refresh_token(os.environ["BING_ADS_REFRESH_TOKEN"])
@@ -50,8 +52,41 @@ def bing_spend():
                               developer_token=os.environ["BING_ADS_DEVELOPER_TOKEN"], authentication=auth)
     R = ServiceClient(service="ReportingService", version=13, authorization_data=authz, environment="production")
     R.soap_client.options.plugins.append(Prune())
-    f = R.factory
+    return R, R.factory, AID
 
+
+def run_report(R, req):
+    """Submit, poll, download a Bing report. Returns a list of row dicts (column -> value)."""
+    rid = R.SubmitGenerateReport(ReportRequest=req)
+    url = None
+    for _ in range(60):
+        time.sleep(3)
+        st = R.PollGenerateReport(ReportRequestId=rid)
+        if st.Status == "Success":
+            url = st.ReportDownloadUrl
+            break
+        if st.Status == "Error":
+            raise RuntimeError("Bing report generation failed")
+    else:
+        raise TimeoutError("Bing report timed out")
+    if not url:
+        return []
+    data = urllib.request.urlopen(url).read()
+    z = zipfile.ZipFile(io.BytesIO(data))
+    csv = z.read(z.namelist()[0]).decode("utf-8-sig")
+    rows = [r for r in csv.splitlines() if r.strip()]
+    if not rows:
+        return []
+    header = [h.strip('"') for h in rows[0].split(",")]
+    out = []
+    for r in rows[1:]:
+        c = [x.strip('"') for x in r.split(",")]
+        out.append({h: (c[i] if i < len(c) else "") for i, h in enumerate(header)})
+    return out
+
+
+def bing_spend():
+    R, f, AID = bing_client()
     req = f.create("CampaignPerformanceReportRequest")
     req.Format = "Csv"
     req.ReturnOnlyCompleteData = False
@@ -66,39 +101,47 @@ def bing_spend():
     cols.CampaignPerformanceReportColumn.extend(["CampaignName", "Spend", "Clicks", "Impressions", "AverageCpc", "Ctr"])
     req.Columns = cols
     t = f.create("ReportTime")
-    t.PredefinedTime = {7: "LastSevenDays", 30: "LastThirtyDays"}.get(DAYS, "LastSevenDays")
+    t.PredefinedTime = PREDEF_TIME
     req.Time = t
 
-    rid = R.SubmitGenerateReport(ReportRequest=req)
-    for _ in range(60):
-        time.sleep(3)
-        st = R.PollGenerateReport(ReportRequestId=rid)
-        if st.Status == "Success":
-            url = st.ReportDownloadUrl
-            break
-        if st.Status == "Error":
-            raise RuntimeError("Bing report generation failed")
-    else:
-        raise TimeoutError("Bing report timed out")
-    if not url:
-        return {"spend": 0.0, "clicks": 0, "impressions": 0, "note": "no data (new campaign)"}
-
-    data = urllib.request.urlopen(url).read()
-    z = zipfile.ZipFile(io.BytesIO(data))
-    csv = z.read(z.namelist()[0]).decode("utf-8-sig")
-    rows = [r for r in csv.splitlines() if r.strip()]
-    header = rows[0].split(",")
-    idx = {h.strip('"'): i for i, h in enumerate(header)}
+    rows = run_report(R, req)
     out = {"spend": 0.0, "clicks": 0, "impressions": 0}
-    for r in rows[1:]:
-        c = [x.strip('"') for x in r.split(",")]
-        if len(c) <= idx.get("CampaignName", 0):
-            continue
-        if c[idx["CampaignName"]] == CAMP_NAME:
-            out["spend"] = float(c[idx["Spend"]] or 0)
-            out["clicks"] = int(float(c[idx["Clicks"]] or 0))
-            out["impressions"] = int(float(c[idx["Impressions"]] or 0))
+    if not rows:
+        out["note"] = "no data (new campaign)"
+        return out
+    for c in rows:
+        if c.get("CampaignName") == CAMP_NAME:
+            out["spend"] = float(c.get("Spend") or 0)
+            out["clicks"] = int(float(c.get("Clicks") or 0))
+            out["impressions"] = int(float(c.get("Impressions") or 0))
     return out
+
+
+def bing_adgroup(name):
+    """Ad-group-level performance for one ad group (the API-replacement learning test)."""
+    R, f, AID = bing_client()
+    req = f.create("AdGroupPerformanceReportRequest")
+    req.Format = "Csv"
+    req.ReturnOnlyCompleteData = False
+    req.Aggregation = "Summary"
+    req.ExcludeColumnHeaders = False
+    req.ExcludeReportHeader = True
+    req.ExcludeReportFooter = True
+    scope = f.create("AccountThroughAdGroupReportScope")
+    scope.AccountIds = {"long": [AID]}
+    req.Scope = scope
+    cols = f.create("ArrayOfAdGroupPerformanceReportColumn")
+    cols.AdGroupPerformanceReportColumn.extend(["AdGroupName", "Spend", "Clicks", "Impressions", "AverageCpc", "Ctr"])
+    req.Columns = cols
+    t = f.create("ReportTime")
+    t.PredefinedTime = PREDEF_TIME
+    req.Time = t
+
+    for c in run_report(R, req):
+        if c.get("AdGroupName") == name:
+            return {"spend": float(c.get("Spend") or 0), "clicks": int(float(c.get("Clicks") or 0)),
+                    "impressions": int(float(c.get("Impressions") or 0)), "ctr": c.get("Ctr", "")}
+    return None
 
 
 def stripe_subs():
@@ -127,4 +170,18 @@ elif new > 0:
     print(f"CAC        : €{cac:.2f} per new sub  (assumed LTV €{ASSUMED_LTV_EUR:.0f} -> {verdict}, ratio {ASSUMED_LTV_EUR/cac:.1f}:1)")
 else:
     print(f"CAC        : n/a — €{spend:.2f} spent, 0 new subs yet. Break-even needs 1 sub per €{ASSUMED_LTV_EUR:.0f} spend.")
+
+# --- API-replacement repositioning test (ad-group level) ---
+try:
+    ag = bing_adgroup(APITEST_AG)
+except Exception as e:
+    ag = None
+    print(f"\n{APITEST_AG:12}: report error ({str(e)[:70]})")
+if ag is not None:
+    msg = "message draws clicks" if ag["clicks"] > 0 else "no clicks yet — message not resonating (or too little volume)"
+    print(f"\n{APITEST_AG} test: €{ag['spend']:.2f} | {ag['impressions']} impr | {ag['clicks']} clicks | CTR {ag['ctr']}")
+    print(f"  -> {msg}. Tests the 'Yahoo Finance API replacement / no-code' angle (Bing volume is thin).")
+else:
+    print(f"\n{APITEST_AG} test: no rows yet (ad group may need more time to deliver).")
+
 print("\nManual: cross-check Chrome Web Store Dashboard installs (no public API) to get install- and free->paid rates.")
