@@ -2,49 +2,70 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://fingrab.app/</loc>
-    <lastmod>2026-03-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://fingrab.app/#/blog</loc>
-    <lastmod>2026-03-26</lastmod>
+    <loc>https://fingrab.app/blog</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://fingrab.app/#/blog/export-yahoo-finance-csv</loc>
+    <loc>https://fingrab.app/privacy</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://fingrab.app/blog/export-yahoo-finance-csv</loc>
     <lastmod>2026-03-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://fingrab.app/#/blog/historical-stock-price-data</loc>
+    <loc>https://fingrab.app/blog/historical-stock-price-data</loc>
     <lastmod>2026-03-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://fingrab.app/#/blog/excel-stock-analysis</loc>
+    <loc>https://fingrab.app/blog/excel-stock-analysis</loc>
     <lastmod>2026-03-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://fingrab.app/#/blog/best-free-stock-screeners</loc>
+    <loc>https://fingrab.app/blog/best-free-stock-screeners</loc>
     <lastmod>2026-03-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://fingrab.app/#/blog/stock-portfolio-tracker-google-sheets</loc>
+    <loc>https://fingrab.app/blog/stock-portfolio-tracker-google-sheets</loc>
     <lastmod>2026-03-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://fingrab.app/#/blog/yahoo-finance-api-alternatives</loc>
+    <loc>https://fingrab.app/blog/yahoo-finance-api-alternatives</loc>
     <lastmod>2026-03-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://fingrab.app/blog/download-stock-data-google-finance</loc>
+    <lastmod>2026-03-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://fingrab.app/blog/technical-analysis-data-beginners</loc>
+    <lastmod>2026-03-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://fingrab.app/blog/compare-stock-performance-guide</loc>
+    <lastmod>2026-03-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>

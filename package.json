@@ -5,7 +5,9 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
+    "sitemap": "node scripts/generate-sitemap.js",
+    "prebuild": "node scripts/generate-sitemap.js",
+    "build": "vite-ssg build",
     "preview": "vite preview",
     "test": "vitest run"
   },
@@ -22,6 +24,7 @@
     "@vue/test-utils": "^2.4.6",
     "jsdom": "^29.0.1",
     "vite": "^7.2.4",
+    "vite-ssg": "^28.3.0",
     "vitest": "^4.1.1"
   }
 }
