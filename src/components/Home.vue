@@ -116,6 +116,26 @@
         </div>
     </section>
 
+    <!-- Guides / blog -->
+    <section class="bg-slate-950 text-slate-100 py-20 px-4">
+        <div class="max-w-4xl mx-auto">
+            <h2 class="text-2xl sm:text-3xl font-semibold text-center mb-4">Guides &amp; tutorials</h2>
+            <p class="text-center text-sm text-slate-400 mb-12">Free, no-code walkthroughs for getting financial data into your spreadsheet.</p>
+            <div class="grid sm:grid-cols-3 gap-6">
+                <router-link v-for="guide in featuredGuides" :key="guide.slug" :to="`/blog/${guide.slug}`"
+                             class="block rounded-xl border border-white/10 bg-white/5 p-6 hover:border-emerald-500/40 transition-colors">
+                    <h3 class="font-semibold mb-2">{{ guide.title }}</h3>
+                    <p class="text-sm text-slate-400">{{ guide.description }}</p>
+                </router-link>
+            </div>
+            <div class="text-center mt-10">
+                <router-link to="/blog" class="text-sm text-emerald-400 hover:text-emerald-300 underline underline-offset-2">
+                    Browse all guides →
+                </router-link>
+            </div>
+        </div>
+    </section>
+
     <!-- Final CTA -->
     <section class="bg-brand2 text-slate-100 py-20 px-4">
         <div class="max-w-2xl mx-auto text-center">
@@ -126,7 +146,8 @@
                  transition-transform duration-150 hover:-translate-y-0.5">
                 {{ cta }}
             </a>
-            <div class="mt-12 text-xs text-slate-500">
+            <div class="mt-12 text-xs text-slate-500 flex items-center justify-center gap-4">
+                <router-link to="/blog" class="hover:text-slate-300 underline underline-offset-2">Blog</router-link>
                 <router-link to="/privacy" class="hover:text-slate-300 underline underline-offset-2">Privacy Policy</router-link>
             </div>
         </div>
@@ -134,6 +155,7 @@
 </template>
 <script setup>
 import { useHead } from '@unhead/vue'
+import { findArticle } from '../blog/articles.js'
 
 const props = defineProps({
     badge: { type: String, required: true },
@@ -156,6 +178,15 @@ const testimonials = [
 ]
 
 const reviewsUrl = props.url ? `${props.url}/reviews` : '#'
+
+// Internal links from the indexed homepage into the blog. Titles/descriptions
+// come from articles.js (single source of truth) so they never drift. These
+// give Google a crawl path from the trusted homepage to specific articles.
+const featuredGuides = [
+    'export-yahoo-finance-csv',
+    'historical-stock-price-data',
+    'best-free-stock-screeners',
+].map(findArticle).filter(Boolean)
 
 const steps = [
     { title: 'Install the extension', desc: 'Add FinGrab from the Chrome Web Store. Takes less than a minute.' },
