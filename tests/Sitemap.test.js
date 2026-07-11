@@ -19,6 +19,7 @@ describe('Sitemap', () => {
         expect(locs).toContain('https://fingrab.app/')
         expect(locs).toContain('https://fingrab.app/blog')
         expect(locs).toContain('https://fingrab.app/privacy')
+        expect(locs).toContain('https://fingrab.app/stock-prices-in-excel')
     })
 
     it('has no <loc> containing a # fragment', () => {

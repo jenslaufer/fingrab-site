@@ -46,6 +46,12 @@
                     <p class="text-sm text-slate-400">{{ step.desc }}</p>
                 </div>
             </div>
+            <p class="text-center mt-10 text-sm">
+                <router-link to="/stock-prices-in-excel"
+                    class="text-emerald-400 hover:text-emerald-300 transition-colors">
+                    See it live: get stock prices into Excel in two clicks →
+                </router-link>
+            </p>
         </div>
     </section>
 

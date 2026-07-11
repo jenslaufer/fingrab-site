@@ -36,6 +36,7 @@ export default defineConfig({
         '/',
         '/privacy',
         '/blog',
+        '/stock-prices-in-excel',
         ...articleSlugs().map(slug => `/blog/${slug}`),
       ]
     },
