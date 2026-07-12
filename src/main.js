@@ -21,6 +21,10 @@ const routes = [
         component: () => import('./components/PrivacyPolicy.vue'),
     },
     {
+        path: '/stock-prices-in-excel',
+        component: () => import('./components/StockPricesInExcel.vue'),
+    },
+    {
         path: '/blog',
         component: () => import('./components/BlogHome.vue'),
     },

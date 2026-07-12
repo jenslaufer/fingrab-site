@@ -15,6 +15,7 @@ const staticUrls = [
     { loc: `${BASE}/`, changefreq: 'monthly', priority: '1.0' },
     { loc: `${BASE}/blog`, changefreq: 'weekly', priority: '0.8' },
     { loc: `${BASE}/privacy`, changefreq: 'yearly', priority: '0.3' },
+    { loc: `${BASE}/stock-prices-in-excel`, changefreq: 'monthly', priority: '0.8' },
 ]
 
 const articleUrls = articles.map(a => ({

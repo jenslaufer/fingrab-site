@@ -6,7 +6,9 @@
     </p>
     <p>
         Most financial data providers require API keys, coding skills, or paid subscriptions. But if you use
-        Yahoo Finance, there's a simpler way.
+        Yahoo Finance, there's a simpler way — see the
+        <router-link to="/stock-prices-in-excel">two-click demo of getting stock prices into Excel</router-link>
+        with real screenshots.
     </p>
 
     <h2>What data do you need?</h2>
