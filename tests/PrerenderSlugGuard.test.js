@@ -3,7 +3,7 @@
 // plugins, and jsdom's TextEncoder shim breaks esbuild.
 import { describe, it, expect, beforeAll } from 'vitest'
 import { execSync } from 'node:child_process'
-import { readdirSync, existsSync } from 'node:fs'
+import { readdirSync, existsSync, readFileSync } from 'node:fs'
 import { resolve } from 'node:path'
 import { articleSlugs } from '../vite.config.js'
 
@@ -48,5 +48,11 @@ describe('Prerender slug divergence guard', () => {
         for (const slug of importedSlugs) {
             expect(existsSync(resolve(process.cwd(), `dist/blog/${slug}.html`))).toBe(true)
         }
+    })
+
+    it('emits privacy.html — the fragment-free URL the Chrome Web Store points at', () => {
+        const privacy = resolve(process.cwd(), 'dist/privacy.html')
+        expect(existsSync(privacy)).toBe(true)
+        expect(readFileSync(privacy, 'utf-8')).toContain('Privacy Policy')
     })
 })
