@@ -80,15 +80,15 @@ describe('StockPricesInExcel — content', () => {
 })
 
 describe('StockPricesInExcel — route wiring', () => {
-    const mainSrc = readFileSync(resolve(process.cwd(), 'src/main.js'), 'utf-8')
+    const routesSrc = readFileSync(resolve(process.cwd(), 'src/routes.js'), 'utf-8')
     const viteSrc = readFileSync(resolve(process.cwd(), 'vite.config.js'), 'utf-8')
     const sitemapGen = readFileSync(
         resolve(process.cwd(), 'scripts/generate-sitemap.js'),
         'utf-8'
     )
 
-    it('is registered as a route in main.js', () => {
-        expect(mainSrc).toContain("'/stock-prices-in-excel'")
+    it('is registered as a route in routes.js', () => {
+        expect(routesSrc).toContain("'/stock-prices-in-excel'")
     })
 
     it('is prerendered via includedRoutes in vite.config.js', () => {
