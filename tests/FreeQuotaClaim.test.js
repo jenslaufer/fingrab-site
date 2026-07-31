@@ -30,6 +30,7 @@ import { describe, it, expect } from 'vitest'
 import { mount } from '@vue/test-utils'
 import { createHead } from '@unhead/vue/client'
 import { readFileSync, readdirSync, statSync } from 'node:fs'
+import { execFileSync } from 'node:child_process'
 import { join, resolve } from 'node:path'
 import { FREE_EXPORTS } from '../src/config.js'
 import { routes } from '../src/routes.js'
@@ -167,31 +168,51 @@ describe('the constant itself', () => {
      *
      * The invariant that actually matters is cross-repo — this constant must
      * equal `VITE_MAX_FREE_QUOTA` in the extension build that is live in the
-     * Chrome Web Store. The extension lives in a different repo on a different
-     * host, so no test here can read it.
+     * Chrome Web Store. That build lives in a different repo on a different
+     * host, so no assertion in this file can reach it. `npm run verify:quota`
+     * can: it downloads the live package and reads the number out of the
+     * shipped bundle. Run it before changing the value below.
      *
-     * What this assertion buys instead: the number cannot be changed casually.
-     * Editing it forces editing this line, which forces reading the checklist.
-     * That is exactly the step that was skipped when the quota went 15 -> 3.
+     * The value here is a RECORDING of that measurement, kept so the number
+     * cannot be edited casually — changing it forces reading this block.
+     *
+     * A previous attempt recorded the quota from the commit *titled* "release
+     * 2.0.3" and was wrong: the branch took one more commit (`d0bfa3f`, "Set
+     * free export quota to 5") before the package was uploaded. A release
+     * commit is a proxy for the artifact. Read the artifact.
      *
      * CHECKLIST before changing this number:
-     *   1. Read the LIVE version from the store item data, not from a branch:
-     *      curl -sL "https://chromewebstore.google.com/detail/\
-     *      blajbhgoiomncfkpcfgiibcicifklgpm?ucbcb=1&hl=en" \
-     *        | grep -o '"version": "[0-9.]*"' | head -1
-     *   2. In the extension repo, read `VITE_MAX_FREE_QUOTA` from the .env at
-     *      THAT version's release commit — not from the working tree.
-     *   3. Set both numbers below to that value.
-     *   4. Update the Chrome Web Store detailed description too. It is a
+     *   1. `npm run verify:quota` — reports the live version and the quota the
+     *      shipped build enforces, and exits non-zero on disagreement.
+     *   2. Set FREE_EXPORTS and the recording below to the enforced value.
+     *   3. Update the Chrome Web Store detailed description too. It is a
      *      dashboard-only field, invisible to every test in every repo, and it
      *      is where this defect survived longest.
      */
-    it('matches the free quota of the extension version live in the store', () => {
+    it('matches the free quota enforced by the shipped extension', () => {
+        // Measured 2026-07-31 from the package the Chrome update service
+        // serves: manifest version 2.0.3, overlay chunk binds :max-quota to
+        // g(5). Cross-checked against the tips of release/2.0.3 and
+        // release/2.0.4, which both set VITE_MAX_FREE_QUOTA=5 — so this
+        // number does not move when 2.0.4 ships.
         const LIVE_STORE_VERSION = '2.0.3'
-        const QUOTA_IN_THAT_RELEASE = 3 // .env at release commit cee72e8
+        const QUOTA_THAT_BUILD_ENFORCES = 5
 
-        expect(FREE_EXPORTS).toBe(QUOTA_IN_THAT_RELEASE)
+        expect(FREE_EXPORTS).toBe(QUOTA_THAT_BUILD_ENFORCES)
         // Recorded so the provenance is greppable, not just prose.
         expect(LIVE_STORE_VERSION).toBe('2.0.3')
+    })
+
+    /**
+     * Opt-in because it needs the network: `VERIFY_LIVE_QUOTA=1 npm test`.
+     * Kept out of the default run so an offline suite fails for offline
+     * reasons only — but wired up here so the check is one env var away
+     * rather than a paragraph of prose nobody executes.
+     */
+    const liveCheck = process.env.VERIFY_LIVE_QUOTA ? it : it.skip
+    liveCheck('agrees with the package the store is serving right now', () => {
+        // Throws with the script's own diagnostics on mismatch or on an
+        // undeterminable value; an unknown must never read as agreement.
+        execFileSync('node', ['scripts/verify-live-quota.mjs'], { stdio: 'pipe' })
     })
 })
