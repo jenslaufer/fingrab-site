@@ -160,7 +160,7 @@ const steps = [
     },
     {
         title: 'Click it — the ticker is already detected',
-        desc: 'The export dialog opens with the symbol filled in. Pick a time period (up to one year free, full history on Pro) and an interval: daily, weekly, or monthly candles. The data is fetched directly from Yahoo Finance and processed locally in your browser.',
+        desc: 'The export dialog opens with the symbol filled in. Pick a time period — six months up to maximum history, all of it available on the free exports too — and an interval: daily, weekly, or monthly candles. The data is fetched directly from Yahoo Finance and processed locally in your browser.',
         img: '/demo/step-2-export-dialog.webp',
         imgHeight: 750,
         alt: 'FinGrab Historical Data Export dialog with the AAPL ticker auto-detected and time period and interval selectors',
@@ -205,7 +205,7 @@ const alternatives = [
 const faqs = [
     {
         q: 'Is FinGrab free?',
-        a: `You get ${FREE_EXPORTS} free exports — no signup, no credit card. If it earns a place in your workflow, Pro unlocks unlimited exports and full price history (2 years, 5 years, maximum).`,
+        a: `You get ${FREE_EXPORTS} free exports — no signup, no credit card, and every time range from six months to maximum history is open on them. If it earns a place in your workflow, Pro lifts the export count.`,
     },
     {
         q: 'Do I need an API key or a Yahoo account?',

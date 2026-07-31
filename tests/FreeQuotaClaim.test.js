@@ -95,6 +95,39 @@ describe('rendered pages state the shipped free-export count', () => {
     it('the homepage CTA footer carries the count (it comes in as a route prop)', () => {
         expect(homeProps.ctaFooter).toContain(`${FREE_EXPORTS} free exports`)
     })
+
+    /**
+     * The free tier is limited by COUNT, not by time range. Verified in
+     * Overlay.vue: for an unpaid user inside the quota, the 2y / 5y / max
+     * options render enabled; they only turn disabled in #exceededQuota. The
+     * store listing says the same ("full access to all time ranges and
+     * intervals"), so code and listing agree and the site was the outlier —
+     * it claimed "up to one year free, full history on Pro".
+     *
+     * That error ran the safe direction (understating), so it cost no reviews.
+     * It cost conversions instead: it made the free offer sound stingier than
+     * the product is, right next to the install button.
+     */
+    const RANGE_GATE_CLAIMS = [
+        /up to one year free/i,
+        /full history on Pro/i,
+        /full price history/i,
+        /one year free/i,
+    ]
+
+    for (const [name, mountPage] of pages) {
+        it(`${name} does not claim a time-range gate the product has no`, () => {
+            const text = mountPage().text()
+            for (const claim of RANGE_GATE_CLAIMS) {
+                expect(text).not.toMatch(claim)
+            }
+        })
+    }
+
+    it('would catch a range-gate claim if one came back (positive control)', () => {
+        const wrong = 'Pick a time period (up to one year free, full history on Pro).'
+        expect(RANGE_GATE_CLAIMS.some(c => c.test(wrong))).toBe(true)
+    })
 })
 
 describe('source carries no hardcoded count that disagrees', () => {
