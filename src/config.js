@@ -7,12 +7,20 @@
 /**
  * Free CSV exports before the paywall.
  *
- * Live extension 2.0.3 sets `VITE_MAX_FREE_QUOTA=3` (release commit cee72e8,
- * "release 2.0.3: store rename (#88) + free quota 15->3"), and
- * `src/pages/Overlay.vue` reads that env var, so 3 is the wall the user meets.
+ * The extension live in the store (2.0.3) enforces 5. Measured in the shipped
+ * package itself, not in a branch: the overlay chunk binds `:max-quota` to
+ * `g(5)`, constant-folded from `VITE_MAX_FREE_QUOTA` at build time. The tips
+ * of release/2.0.3 and release/2.0.4 both say 5, so this does not move when
+ * 2.0.4 ships.
  *
- * 2.0.4 is built with 5 and waiting on a store upload. Flip this to 5 the day
- * 2.0.4 is live — not before. Promising more than the build delivers is the
- * direction that earns 1-star reviews; promising less costs nothing.
+ * Do not read this number off a release commit. The commit titled "release
+ * 2.0.3" (cee72e8) says 3; the branch took one more commit before upload
+ * (d0bfa3f, "Set free export quota to 5"). That mistake is how the site spent
+ * 2026-07-31 promising 3. Run `npm run verify:quota` instead — it reads the
+ * package the store is actually serving.
+ *
+ * Both directions of error cost something. Promising more than the build
+ * delivers earns 1-star reviews; promising less makes the free tier sound
+ * stingier than it is, right beside the install button.
  */
-export const FREE_EXPORTS = 3
+export const FREE_EXPORTS = 5

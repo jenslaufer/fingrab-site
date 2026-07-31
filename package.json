@@ -9,7 +9,8 @@
     "prebuild": "node scripts/generate-sitemap.js",
     "build": "vite-ssg build",
     "preview": "vite preview",
-    "test": "vitest run"
+    "test": "vitest run",
+    "verify:quota": "node scripts/verify-live-quota.mjs"
   },
   "dependencies": {
     "@fontsource-variable/merriweather": "^5.2.6",
