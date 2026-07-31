@@ -4,6 +4,7 @@ import { createHead } from '@unhead/vue/client'
 import { readFileSync } from 'node:fs'
 import { resolve } from 'node:path'
 import StockPricesInExcel from '../src/components/StockPricesInExcel.vue'
+import { FREE_EXPORTS } from '../src/config.js'
 
 const mockRouter = {
     install(app) {
@@ -48,9 +49,11 @@ describe('StockPricesInExcel — content', () => {
         }
     })
 
-    it('states the honest free offer (15 free exports), no vague tier', () => {
+    // Count read from the constant, never written here — see the note in
+    // tests/Home.test.js and tests/FreeQuotaClaim.test.js.
+    it('states an honest concrete free offer, no vague tier', () => {
         const text = mountPage().text()
-        expect(text).toContain('15 free exports')
+        expect(text).toContain(`${FREE_EXPORTS} free exports`)
         expect(text).not.toContain('basic exports')
     })
 

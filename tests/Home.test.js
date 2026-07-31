@@ -2,6 +2,7 @@ import { describe, it, expect } from 'vitest'
 import { mount } from '@vue/test-utils'
 import { createHead } from '@unhead/vue/client'
 import Home from '../src/components/Home.vue'
+import { FREE_EXPORTS } from '../src/config.js'
 
 const mockRouter = {
     install(app) {
@@ -22,7 +23,7 @@ function mountHome() {
             headline: 'Grab financial raw data',
             uvp: 'Download raw data from Yahoo Finance.',
             cta: 'Add FinGrab.app to Chrome',
-            ctaFooter: '15 free exports. No signup. Setup in under 2 minutes.',
+            ctaFooter: `${FREE_EXPORTS} free exports. No signup. Setup in under 2 minutes.`,
             productName: 'FinGrab.app',
             url: storeUrl,
         },
@@ -84,14 +85,18 @@ describe('Home — blog discoverability (internal linking)', () => {
 })
 
 describe('Home — concrete free-tier offer', () => {
-    it('states the concrete "15 free exports" offer in the FAQ, not a vague tier', () => {
+    // The count is read from the constant, never written here. This assertion
+    // used to hardcode 15 and so pinned the copy to a number the shipped
+    // extension had stopped honouring — the test held the drift in place
+    // instead of catching it. See tests/FreeQuotaClaim.test.js.
+    it('states a concrete free-export count in the FAQ, not a vague tier', () => {
         const text = mountHome().text()
-        expect(text).toContain('15 free exports')
+        expect(text).toContain(`${FREE_EXPORTS} free exports`)
         expect(text).not.toContain('basic exports')
     })
 
     it('surfaces the free-export count near the primary CTA footer', () => {
         // ctaFooter is passed as a prop; the page must render it.
-        expect(mountHome().text()).toContain('15 free exports')
+        expect(mountHome().text()).toContain(`${FREE_EXPORTS} free exports`)
     })
 })

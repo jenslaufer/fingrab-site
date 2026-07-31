@@ -162,6 +162,7 @@
 <script setup>
 import { useHead } from '@unhead/vue'
 import { findArticle } from '../blog/articles.js'
+import { FREE_EXPORTS } from '../config.js'
 
 const props = defineProps({
     badge: { type: String, required: true },
@@ -215,7 +216,7 @@ const useCases = [
 ]
 
 const faqs = [
-    { q: 'Is FinGrab free?', a: 'Yes — 15 free exports with full access to all time ranges and intervals. No signup required. Need more? Upgrade to unlock unlimited downloads.' },
+    { q: 'Is FinGrab free?', a: `Yes — ${FREE_EXPORTS} free exports with full access to all time ranges and intervals. No signup required. Need more? Upgrade to unlock unlimited downloads.` },
     { q: 'What data formats are supported?', a: 'CSV files compatible with Excel, Google Sheets, LibreOffice, Numbers, and any analysis tool that reads CSV.' },
     { q: 'Does it work with all Yahoo Finance pages?', a: 'FinGrab works with individual stock, ETF, and index pages on finance.yahoo.com.' },
     { q: 'Is my data stored anywhere?', a: 'No. All processing happens locally in your browser. No data is sent to external servers.' },

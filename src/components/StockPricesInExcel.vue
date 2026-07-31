@@ -25,7 +25,7 @@
                     Add FinGrab to Chrome
                 </a>
                 <div class="text-xs sm:text-sm text-slate-400">
-                    15 free exports. No signup. Setup in under 2 minutes.
+                    {{ FREE_EXPORTS }} free exports. No signup. Setup in under 2 minutes.
                 </div>
             </div>
 
@@ -116,7 +116,7 @@
         <div class="max-w-3xl mx-auto text-center">
             <h2 class="text-2xl sm:text-3xl font-semibold mb-4">Try it on the next stock you look up</h2>
             <p class="text-sm sm:text-base text-slate-400 mb-8">
-                15 free exports to see if it fits your workflow. No signup, no API key.
+                {{ FREE_EXPORTS }} free exports to see if it fits your workflow. No signup, no API key.
             </p>
             <a :href="storeUrl" class="inline-flex items-center justify-center rounded-full px-6 py-3 text-lg font-semibold
              bg-emerald-500 hover:bg-emerald-400 text-black shadow-lg shadow-emerald-500/30
@@ -145,6 +145,7 @@
 <script setup>
 import { useHead } from '@unhead/vue'
 import { findArticle } from '../blog/articles.js'
+import { FREE_EXPORTS } from '../config.js'
 
 const storeUrl =
     'https://chromewebstore.google.com/detail/fingrab%E2%80%93yahoo-finance-exp/blajbhgoiomncfkpcfgiibcicifklgpm'
@@ -159,7 +160,7 @@ const steps = [
     },
     {
         title: 'Click it — the ticker is already detected',
-        desc: 'The export dialog opens with the symbol filled in. Pick a time period (up to one year free, full history on Pro) and an interval: daily, weekly, or monthly candles. The data is fetched directly from Yahoo Finance and processed locally in your browser.',
+        desc: 'The export dialog opens with the symbol filled in. Pick a time period — six months up to maximum history, all of it available on the free exports too — and an interval: daily, weekly, or monthly candles. The data is fetched directly from Yahoo Finance and processed locally in your browser.',
         img: '/demo/step-2-export-dialog.webp',
         imgHeight: 750,
         alt: 'FinGrab Historical Data Export dialog with the AAPL ticker auto-detected and time period and interval selectors',
@@ -204,7 +205,7 @@ const alternatives = [
 const faqs = [
     {
         q: 'Is FinGrab free?',
-        a: 'You get 15 free exports — no signup, no credit card. If it earns a place in your workflow, Pro unlocks unlimited exports and full price history (2 years, 5 years, maximum).',
+        a: `You get ${FREE_EXPORTS} free exports — no signup, no credit card, and every time range from six months to maximum history is open on them. If it earns a place in your workflow, Pro lifts the export count.`,
     },
     {
         q: 'Do I need an API key or a Yahoo account?',
@@ -236,7 +237,7 @@ useHead({
         {
             name: 'description',
             content:
-                'How to get stock prices into Excel without code, APIs, or copy-paste: two clicks on any Yahoo Finance page export historical prices as a clean CSV. 15 free exports.',
+                `How to get stock prices into Excel without code, APIs, or copy-paste: two clicks on any Yahoo Finance page export historical prices as a clean CSV. ${FREE_EXPORTS} free exports.`,
         },
     ],
     script: [
