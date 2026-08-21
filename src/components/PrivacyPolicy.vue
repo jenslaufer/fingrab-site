@@ -11,7 +11,7 @@
             <h1 class="text-sm tracking-[0.25em] uppercase text-slate-400 mb-2">FinGrab</h1>
             <h2 class="text-3xl sm:text-4xl font-semibold tracking-tight mb-4">Privacy Policy</h2>
             <p class="text-slate-300 leading-relaxed mb-12">
-                FinGrab is a Chrome extension that exports historical OHLCV data from Yahoo Finance as CSV.
+                FinGrab is a browser extension that exports historical OHLCV data from Yahoo Finance as CSV.
                 This policy explains what data is handled, by whom, and your rights under applicable law
                 including the GDPR.
             </p>
@@ -38,25 +38,21 @@
                 </section>
 
                 <section>
-                    <h3 class="text-lg font-semibold mb-3">3. Chrome Permissions</h3>
+                    <h3 class="text-lg font-semibold mb-3">3. Browser Permissions</h3>
                     <p class="text-slate-300 leading-relaxed mb-3">
-                        FinGrab uses the following Chrome permissions:
+                        FinGrab declares the following permissions. This list is generated from the
+                        manifest of the package published in the store, so it cannot drift away from
+                        what you actually grant on install.
                     </p>
                     <ul class="space-y-2 text-slate-300">
-                        <li class="flex gap-3">
-                            <span class="text-emerald-400 font-mono text-sm mt-0.5 shrink-0">sidePanel</span>
-                            <span>Opens the extension interface in Chrome's side panel. No data is read or
-                                transmitted.</span>
-                        </li>
-                        <li class="flex gap-3">
-                            <span class="text-emerald-400 font-mono text-sm mt-0.5 shrink-0">activeTab</span>
-                            <span>Reads the URL of the active Yahoo Finance tab to extract the ticker symbol. The URL is
-                                used locally and never transmitted to FinGrab.</span>
+                        <li v-for="permission in permissions" :key="permission.name" class="flex gap-3">
+                            <span data-permission
+                                class="text-emerald-400 font-mono text-sm mt-0.5 shrink-0">{{ permission.name }}</span>
+                            <span>{{ permission.purpose }}</span>
                         </li>
                     </ul>
                     <p class="text-slate-300 leading-relaxed mt-3">
-                        The extension is active only on <span
-                            class="font-mono text-sm text-slate-200">finance.yahoo.com/quote/*</span> pages.
+                        The extension runs only on Yahoo Finance pages. It is not active on any other site.
                     </p>
                 </section>
 
@@ -172,6 +168,7 @@
 
 <script setup>
 import { useHead } from '@unhead/vue'
+import { EXTENSION_PERMISSIONS as permissions } from '../config.js'
 
 useHead({
     title: 'FinGrab – Privacy Policy',
