@@ -201,7 +201,7 @@ Drawdown:      =(B2 - C2) / C2 * 100</code></pre>
 </template>
 
 <script setup>
+import { STORE_URL as ctaUrl } from '../../config.js'
 import RelatedArticles from '../RelatedArticles.vue'
 
-const ctaUrl = 'https://chromewebstore.google.com/detail/fingrab'
 </script>

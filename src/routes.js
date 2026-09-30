@@ -8,7 +8,7 @@
 // external forms which reject '#' fragments get (Chrome Web Store privacy
 // policy field), so it has to survive hydration. Guarded by
 // tests/HtmlUrlRoutes.test.js.
-import { FREE_EXPORTS } from './config.js'
+import { FREE_EXPORTS, STORE_URL } from './config.js'
 
 export const routes = [
     {
@@ -20,7 +20,7 @@ export const routes = [
             cta: 'Add FinGrab.app to Chrome',
             ctaFooter: `${FREE_EXPORTS} free exports. No signup. Setup in under 2 minutes.`,
             productName: 'FinGrab.app',
-            url: 'https://chromewebstore.google.com/detail/fingrab%E2%80%93yahoo-finance-exp/blajbhgoiomncfkpcfgiibcicifklgpm'
+            url: STORE_URL
         },
         component: () => import('./components/Home.vue'),
     },

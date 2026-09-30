@@ -68,3 +68,13 @@ export const EXTENSION_PERMISSIONS = [
         purpose: 'Fallback endpoint for the same public Yahoo Finance API, used when query1 does not answer.',
     },
 ]
+
+/**
+ * The FinGrab listing in the Chrome Web Store.
+ *
+ * Keep the item ID. `…/detail/fingrab` without it redirects to the store home
+ * page with HTTP 200, so no link checker flags it — every blog CTA pointed
+ * there from 2026-03-26 to 2026-09-30. `tests/StoreUrl.test.js` guards this.
+ */
+export const STORE_URL =
+    'https://chromewebstore.google.com/detail/fingrab%E2%80%93yahoo-finance-exp/blajbhgoiomncfkpcfgiibcicifklgpm'

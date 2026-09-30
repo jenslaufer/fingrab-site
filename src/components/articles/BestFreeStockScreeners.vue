@@ -228,5 +228,5 @@
 </template>
 
 <script setup>
-const ctaUrl = 'https://chromewebstore.google.com/detail/fingrab'
+import { STORE_URL as ctaUrl } from '../../config.js'
 </script>

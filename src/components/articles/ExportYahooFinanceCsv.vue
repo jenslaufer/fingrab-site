@@ -109,7 +109,7 @@ data.to_csv("aapl.csv")</code></pre>
 </template>
 
 <script setup>
+import { STORE_URL as ctaUrl } from '../../config.js'
 import RelatedArticles from '../RelatedArticles.vue'
 
-const ctaUrl = 'https://chromewebstore.google.com/detail/fingrab'
 </script>

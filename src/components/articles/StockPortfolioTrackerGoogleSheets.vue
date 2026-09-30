@@ -210,5 +210,5 @@ Number of Holdings: =COUNTA(A2:A100)</code></pre>
 </template>
 
 <script setup>
-const ctaUrl = 'https://chromewebstore.google.com/detail/fingrab'
+import { STORE_URL as ctaUrl } from '../../config.js'
 </script>
