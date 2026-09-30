@@ -88,7 +88,7 @@
         <div class="max-w-4xl mx-auto">
             <h2 class="text-2xl sm:text-3xl font-semibold text-center mb-4">Loved by analysts and investors</h2>
             <p class="text-center text-sm text-slate-400 mb-12">Real reviews from the Chrome Web Store.</p>
-            <div class="grid md:grid-cols-2 gap-6">
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
                 <figure v-for="t in testimonials" :key="t.author"
                         class="rounded-xl border border-white/10 bg-white/5 p-6">
                     <div class="text-emerald-400 mb-3" aria-label="5 out of 5 stars">★★★★★</div>
@@ -163,6 +163,7 @@
 import { useHead } from '@unhead/vue'
 import { findArticle } from '../blog/articles.js'
 import { FREE_EXPORTS } from '../config.js'
+import { STORE_REVIEWS as testimonials } from '../reviews.js'
 
 const props = defineProps({
     badge: { type: String, required: true },
@@ -177,12 +178,6 @@ const props = defineProps({
 useHead({
     title: `${props.productName}–${props.headline}`,
 })
-
-// Verbatim 5-star reviews from the Chrome Web Store listing.
-const testimonials = [
-    { quote: 'This is exactly what I needed. It just works :)', author: 'Robert El Hussein' },
-    { quote: 'it worked for me', author: 'Helen Blackburn' },
-]
 
 const reviewsUrl = props.url ? `${props.url}/reviews` : '#'
 
