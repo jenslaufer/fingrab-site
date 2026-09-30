@@ -20,7 +20,7 @@
 import { computed, defineAsyncComponent } from 'vue'
 import { useRoute } from 'vue-router'
 import { useHead } from '@unhead/vue'
-import { findArticle } from '../blog/articles.js'
+import { findArticle, headTitle } from '../blog/articles.js'
 
 const route = useRoute()
 const article = computed(() => findArticle(route.params.slug))
@@ -35,7 +35,7 @@ useHead(computed(() => {
     const a = article.value
     if (!a) return {}
     return {
-        title: `${a.title} – FinGrab Blog`,
+        title: headTitle(a),
         meta: [{ name: 'description', content: a.description }],
         script: [{
             type: 'application/ld+json',
