@@ -145,10 +145,9 @@
 <script setup>
 import { useHead } from '@unhead/vue'
 import { findArticle } from '../blog/articles.js'
-import { FREE_EXPORTS } from '../config.js'
+import { FREE_EXPORTS, STORE_URL } from '../config.js'
 
-const storeUrl =
-    'https://chromewebstore.google.com/detail/fingrab%E2%80%93yahoo-finance-exp/blajbhgoiomncfkpcfgiibcicifklgpm'
+const storeUrl = STORE_URL
 
 const steps = [
     {
