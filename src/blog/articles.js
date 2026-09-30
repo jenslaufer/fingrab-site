@@ -30,21 +30,24 @@ export const articles = [
     {
         slug: 'stock-portfolio-tracker-google-sheets',
         title: 'How to Build a Stock Portfolio Tracker in Google Sheets',
-        description: 'Step-by-step guide to building a stock portfolio tracker in Google Sheets with live prices, dividend tracking, and performance charts.',
+        metaTitle: 'Google Sheets Portfolio Tracker: Live Prices & Dividends',
+        description: 'Build a stock portfolio tracker in Google Sheets in 6 steps: live GOOGLEFINANCE prices, gain/loss, dividends and a performance chart. Formulas included.',
         date: '2026-03-26',
         component: () => import('../components/articles/StockPortfolioTrackerGoogleSheets.vue'),
     },
     {
         slug: 'yahoo-finance-api-alternatives',
         title: 'Yahoo Finance API Alternatives: Free Financial Data Sources',
-        description: 'Overview of free Yahoo Finance API alternatives including Alpha Vantage, Financial Modeling Prep, Twelve Data, and browser-based export tools.',
+        metaTitle: '6 Free Yahoo Finance API Alternatives Compared (2026)',
+        description: 'Alpha Vantage, Financial Modeling Prep, Twelve Data, Polygon.io, EODHD and yfinance compared: free-tier limits, coverage, and a no-code option.',
         date: '2026-03-26',
         component: () => import('../components/articles/YahooFinanceApiAlternatives.vue'),
     },
     {
         slug: 'download-stock-data-google-finance',
         title: 'How to Download Stock Data from Google Finance',
-        description: 'All methods to download stock data from Google Finance: GOOGLEFINANCE() in Sheets, manual copy, and browser extensions like FinGrab for Yahoo Finance export.',
+        metaTitle: 'Download Stock Data from Google Finance: 4 Ways (2026)',
+        description: 'Google Finance has no download button. 4 ways to get the data anyway: GOOGLEFINANCE() in Sheets, copy and paste, the old API, or a CSV from Yahoo Finance.',
         date: '2026-03-27',
         component: () => import('../components/articles/DownloadStockDataGoogleFinance.vue'),
     },
@@ -63,6 +66,11 @@ export const articles = [
         component: () => import('../components/articles/CompareStockPerformanceGuide.vue'),
     },
 ]
+
+// metaTitle replaces the <title> where the h1 is too long for a search result.
+export function headTitle(a) {
+    return a.metaTitle ?? `${a.title} – FinGrab Blog`
+}
 
 export function findArticle(slug) {
     return articles.find(a => a.slug === slug)
