@@ -21,6 +21,14 @@ export const articles = [
         component: () => import('../components/articles/ExcelStockAnalysis.vue'),
     },
     {
+        slug: 'yahoo-finance-data-to-excel',
+        title: 'How to Get Yahoo Finance Data into Excel: 3 Methods',
+        metaTitle: 'Yahoo Finance Data to Excel: 3 Methods Compared (2026)',
+        description: 'Get Yahoo Finance data into Excel in 3 ways: a manual CSV download, Power Query web import, or the FinGrab extension. Steps and limits for each.',
+        date: '2026-10-19',
+        component: () => import('../components/articles/YahooFinanceDataToExcel.vue'),
+    },
+    {
         slug: 'best-free-stock-screeners',
         title: 'Best Free Stock Screeners 2026: Filter Stocks Like a Pro',
         description: 'Compare the best free stock screeners including Finviz, Yahoo Finance, TradingView, and more. Find the right tool to filter stocks by fundamentals and technicals.',

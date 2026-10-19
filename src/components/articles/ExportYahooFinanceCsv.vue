@@ -105,7 +105,7 @@ data.to_csv("aapl.csv")</code></pre>
         under two minutes.
     </p>
 
-    <RelatedArticles :slugs="['historical-stock-price-data', 'excel-stock-analysis']" />
+    <RelatedArticles :slugs="['historical-stock-price-data', 'excel-stock-analysis', 'yahoo-finance-data-to-excel']" />
 </template>
 
 <script setup>

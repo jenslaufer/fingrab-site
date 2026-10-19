@@ -94,7 +94,7 @@
         your data as CSV, and have a working spreadsheet in minutes — no coding required.
     </p>
 
-    <RelatedArticles :slugs="['export-yahoo-finance-csv', 'historical-stock-price-data']" />
+    <RelatedArticles :slugs="['export-yahoo-finance-csv', 'historical-stock-price-data', 'yahoo-finance-data-to-excel']" />
 </template>
 
 <script setup>
