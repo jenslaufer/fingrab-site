@@ -19,7 +19,7 @@ describe('ExportYahooFinanceCsv', () => {
 
     it('has a heading about exporting Yahoo Finance data', () => {
         const wrapper = mount(ExportYahooFinanceCsv, { global: { plugins: [mockRouter] } })
-        expect(wrapper.text()).toContain('Why export Yahoo Finance data as CSV')
+        expect(wrapper.text()).toContain('Why export Yahoo Finance data to Excel or CSV')
     })
 
     it('has a CTA link to Chrome Web Store', () => {

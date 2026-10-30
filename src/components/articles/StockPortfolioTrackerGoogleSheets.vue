@@ -99,9 +99,8 @@ Number of Holdings: =COUNTA(A2:A100)</code></pre>
         capital gains tracking with income data for a complete return picture.
     </p>
     <p>
-        To get dividend history data for your holdings, you can
-        <router-link to="/blog/export-yahoo-finance-csv">export it from Yahoo Finance as CSV</router-link>
-        and paste it directly into this sheet.
+        Dividend dates and amounts for your holdings are listed on each stock's Historical Data page on
+        Yahoo Finance (filter: Dividends only).
     </p>
 
     <h2>Step 5: Add historical performance data</h2>
@@ -156,13 +155,13 @@ Number of Holdings: =COUNTA(A2:A100)</code></pre>
     </p>
     <h3>Option 2: CSV import from Yahoo Finance</h3>
     <p>
-        <router-link to="/">FinGrab</router-link> lets you export financial statements, key statistics,
-        historical prices, and dividend data from Yahoo Finance as CSV. Open the file in Google Sheets
-        and your data is immediately usable — no API keys, no code, no rate limits.
+        <router-link to="/">FinGrab</router-link> exports the full price history of any Yahoo Finance ticker as
+        CSV, including the adjusted close. Open the file in Google Sheets and your data is immediately usable —
+        no API keys, no code, no rate limits.
     </p>
     <p>
-        This works well for the portfolio tracker workflow: screen stocks, export their data, paste into
-        your analysis sheets, and make informed decisions based on complete financial data.
+        This works well for the portfolio tracker workflow: export the history of each holding, paste it into
+        your Performance sheet, and calculate returns over any period GOOGLEFINANCE does not cover.
     </p>
 
     <h2>Template structure recap</h2>
@@ -193,7 +192,7 @@ Number of Holdings: =COUNTA(A2:A100)</code></pre>
                 </tr>
                 <tr>
                     <td>Research</td>
-                    <td>Imported financial data</td>
+                    <td>Imported price history</td>
                     <td>CSV import from FinGrab</td>
                 </tr>
             </tbody>
@@ -203,9 +202,9 @@ Number of Holdings: =COUNTA(A2:A100)</code></pre>
     <h2>Get started</h2>
     <p>
         Copy the structure above into a new Google Sheet, enter your holdings, and you have a working
-        portfolio tracker in minutes. When you need deeper data — financial statements, historical
-        prices, dividend records — <a :href="ctaUrl" target="_blank" rel="noopener">install FinGrab</a>
-        and export it from Yahoo Finance directly into your spreadsheet.
+        portfolio tracker in minutes. When you need full price history as a file,
+        <a :href="ctaUrl" target="_blank" rel="noopener">install FinGrab</a> and export it from Yahoo Finance
+        directly into your spreadsheet.
     </p>
 </template>
 

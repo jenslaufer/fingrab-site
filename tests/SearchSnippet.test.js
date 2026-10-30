@@ -23,7 +23,7 @@ describe('search snippet of page-1 articles', () => {
     }
 
     it('articles without metaTitle keep the blog suffix', () => {
-        const a = findArticle('export-yahoo-finance-csv')
+        const a = findArticle('historical-stock-price-data')
         expect(headTitle(a)).toBe(`${a.title} – FinGrab Blog`)
     })
 })

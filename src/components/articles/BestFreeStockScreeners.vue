@@ -63,8 +63,8 @@
     </ul>
     <p>
         Once you find stocks worth investigating, you can export their
-        <router-link to="/blog/historical-stock-price-data">historical price data</router-link> or financial
-        statements from Yahoo Finance using a tool like <router-link to="/">FinGrab</router-link>.
+        <router-link to="/blog/historical-stock-price-data">historical price data</router-link> from Yahoo
+        Finance using a tool like <router-link to="/">FinGrab</router-link>.
     </p>
 
     <h2>3. TradingView Screener — best for technical analysis</h2>
@@ -188,8 +188,8 @@
     </p>
     <p>
         <router-link to="/">FinGrab</router-link> bridges this gap. After screening stocks on any platform,
-        open each ticker on Yahoo Finance and export the data you need — financials, OHLCV,
-        dividends — as CSV with one click. No coding, no API keys. Read more about
+        open each ticker on Yahoo Finance and export its price history — OHLCV plus adjusted close — as CSV
+        with one click. No coding, no API keys. Read more about
         <router-link to="/blog/export-yahoo-finance-csv">exporting Yahoo Finance data to CSV</router-link>
         or how to use the data for
         <router-link to="/blog/excel-stock-analysis">stock analysis in Excel</router-link>.
@@ -209,9 +209,8 @@
     <h3>Verify with actual financial data</h3>
     <p>
         Screener data is summary-level. Before making investment decisions, pull the full financial statements
-        and examine the numbers in detail. Tools like
-        <router-link to="/">FinGrab</router-link> make this step fast by exporting complete financial
-        data from Yahoo Finance directly to CSV.
+        and examine the numbers in detail. For the price side,
+        <router-link to="/">FinGrab</router-link> exports the full history from Yahoo Finance directly to CSV.
     </p>
     <h3>Save and revisit your screens</h3>
     <p>

@@ -50,8 +50,9 @@
         clean, structured data with no formatting issues.
     </p>
     <p>
-        <router-link to="/">FinGrab</router-link> exports all four data types listed above — OHLCV, financial
-        statements, key statistics, and dividends — as CSV files ready for Excel.
+        <router-link to="/">FinGrab</router-link> covers the first item: historical prices (OHLCV plus adjusted
+        close) as CSV files ready for Excel. Statements, ratios and dividend tables you still copy from Yahoo
+        Finance's own pages.
     </p>
 
     <h2>Practical example: Building a stock dashboard</h2>
@@ -74,8 +75,8 @@
             <strong>Calculate daily returns</strong> — <code>=(B3-B2)/B2</code> for percentage change
         </li>
         <li>
-            <strong>Add financial data</strong> — Export financial statements with FinGrab and link key
-            metrics in a summary sheet
+            <strong>Add financial data</strong> — Copy key metrics from Yahoo Finance's Statistics page into a
+            summary sheet
         </li>
     </ol>
 
@@ -94,7 +95,7 @@
         your data as CSV, and have a working spreadsheet in minutes — no coding required.
     </p>
 
-    <RelatedArticles :slugs="['export-yahoo-finance-csv', 'historical-stock-price-data', 'yahoo-finance-data-to-excel']" />
+    <RelatedArticles :slugs="['export-yahoo-finance-csv', 'historical-stock-price-data', 'yahoo-finance-api-alternatives']" />
 </template>
 
 <script setup>

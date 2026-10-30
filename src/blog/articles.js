@@ -1,8 +1,9 @@
 export const articles = [
     {
         slug: 'export-yahoo-finance-csv',
-        title: 'How to Export Yahoo Finance Data to CSV',
-        description: 'Step-by-step guide to export stock data from Yahoo Finance as CSV. Compare manual downloads, APIs, and browser extensions like FinGrab.',
+        title: 'How to Export Yahoo Finance Data to Excel or CSV',
+        metaTitle: 'Export Yahoo Finance Data to Excel or CSV (2026)',
+        description: 'Yahoo\'s download button needs a paid Gold plan. 4 ways to get Yahoo Finance prices into Excel or CSV: Power Query, Python, or the FinGrab extension.',
         date: '2026-03-26',
         component: () => import('../components/articles/ExportYahooFinanceCsv.vue'),
     },
@@ -19,14 +20,6 @@ export const articles = [
         description: 'Learn how to analyze stocks in Excel without coding or API keys. Get financial data into your spreadsheet the easy way.',
         date: '2026-03-26',
         component: () => import('../components/articles/ExcelStockAnalysis.vue'),
-    },
-    {
-        slug: 'yahoo-finance-data-to-excel',
-        title: 'How to Get Yahoo Finance Data into Excel: 3 Methods',
-        metaTitle: 'Yahoo Finance Data to Excel: 3 Methods Compared (2026)',
-        description: 'Get Yahoo Finance data into Excel in 3 ways: a manual CSV download, Power Query web import, or the FinGrab extension. Steps and limits for each.',
-        date: '2026-10-19',
-        component: () => import('../components/articles/YahooFinanceDataToExcel.vue'),
     },
     {
         slug: 'best-free-stock-screeners',

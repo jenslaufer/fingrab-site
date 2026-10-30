@@ -27,7 +27,7 @@ describe('BlogHome', () => {
     it('renders all article links', () => {
         const wrapper = mountBlogHome()
         const links = wrapper.findAll('a[href^="/blog/"]')
-        expect(links.length).toBe(10)
+        expect(links.length).toBe(9)
     })
 
     it('links to each article slug', () => {
