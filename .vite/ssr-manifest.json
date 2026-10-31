@@ -36,7 +36,7 @@
     "/assets/montserrat-latin-wght-normal-l_AIctKy.woff2"
   ],
   "../../../../../demo/excel-demo.gif": [
-    "/assets/StockPricesInExcel-DrfExZAM.js"
+    "/assets/StockPricesInExcel-BLKdBjj2.js"
   ],
   "index.html": [
     "/assets/merriweather-cyrillic-ext-wght-normal-Bkm5NjZG.woff2",
@@ -279,55 +279,52 @@
     "/assets/montserrat-latin-wght-normal-l_AIctKy.woff2"
   ],
   "src/blog/articles.js": [
-    "/assets/articles-BTbDx2BR.js"
+    "/assets/articles-BfZZb1Av.js"
   ],
   "src/components/BlogArticle.vue": [
-    "/assets/BlogArticle-CjiXUv46.js"
+    "/assets/BlogArticle-y2iocB1j.js"
   ],
   "src/components/BlogHome.vue": [
-    "/assets/BlogHome-DWOW1EOH.js"
+    "/assets/BlogHome-8qyFoZ6i.js"
   ],
   "src/components/Home.vue": [
-    "/assets/Home-6nctpUtt.js"
+    "/assets/Home-bkwX7ZB3.js"
   ],
   "src/components/PrivacyPolicy.vue": [
-    "/assets/PrivacyPolicy-dEIHGJht.js"
+    "/assets/PrivacyPolicy-DUEU38tn.js"
   ],
   "src/components/RelatedArticles.vue": [
-    "/assets/RelatedArticles-Dr819lk4.js"
+    "/assets/RelatedArticles-jLZ5KLMp.js"
   ],
   "src/components/StockPricesInExcel.vue": [
-    "/assets/StockPricesInExcel-DrfExZAM.js"
+    "/assets/StockPricesInExcel-BLKdBjj2.js"
   ],
   "src/components/articles/BestFreeStockScreeners.vue": [
-    "/assets/BestFreeStockScreeners-y-qdd3jZ.js"
+    "/assets/BestFreeStockScreeners-Cj47AoEb.js"
   ],
   "src/components/articles/CompareStockPerformanceGuide.vue": [
-    "/assets/CompareStockPerformanceGuide-_WAKlEdw.js"
+    "/assets/CompareStockPerformanceGuide-DJpK_TV9.js"
   ],
   "src/components/articles/DownloadStockDataGoogleFinance.vue": [
-    "/assets/DownloadStockDataGoogleFinance-AogUYuSV.js"
+    "/assets/DownloadStockDataGoogleFinance-K5RTy8eV.js"
   ],
   "src/components/articles/ExcelStockAnalysis.vue": [
-    "/assets/ExcelStockAnalysis-CMolyMut.js"
+    "/assets/ExcelStockAnalysis-CyeIFC0m.js"
   ],
   "src/components/articles/ExportYahooFinanceCsv.vue": [
-    "/assets/ExportYahooFinanceCsv-Ew-s5iBw.js"
+    "/assets/ExportYahooFinanceCsv-Ca8mu5Fc.js"
   ],
   "src/components/articles/HistoricalStockPriceData.vue": [
-    "/assets/HistoricalStockPriceData-G3tqIL3S.js"
+    "/assets/HistoricalStockPriceData-Dzt1osZB.js"
   ],
   "src/components/articles/StockPortfolioTrackerGoogleSheets.vue": [
-    "/assets/StockPortfolioTrackerGoogleSheets-CdWbmVJv.js"
+    "/assets/StockPortfolioTrackerGoogleSheets-BiLuuTC6.js"
   ],
   "src/components/articles/TechnicalAnalysisDataBeginners.vue": [
-    "/assets/TechnicalAnalysisDataBeginners-DLbUwgp3.js"
+    "/assets/TechnicalAnalysisDataBeginners-ChaeShF9.js"
   ],
   "src/components/articles/YahooFinanceApiAlternatives.vue": [
-    "/assets/YahooFinanceApiAlternatives-U1TMUJtg.js"
-  ],
-  "src/components/articles/YahooFinanceDataToExcel.vue": [
-    "/assets/YahooFinanceDataToExcel-OU5qOU07.js"
+    "/assets/YahooFinanceApiAlternatives-BmjJXn-H.js"
   ],
   "src/config.js": [
     "/assets/merriweather-cyrillic-ext-wght-normal-Bkm5NjZG.woff2",
@@ -354,7 +351,7 @@
     "/assets/montserrat-latin-wght-normal-l_AIctKy.woff2"
   ],
   "src/reviews.js": [
-    "/assets/Home-6nctpUtt.js"
+    "/assets/Home-bkwX7ZB3.js"
   ],
   "src/routes.js": [
     "/assets/merriweather-cyrillic-ext-wght-normal-Bkm5NjZG.woff2",
