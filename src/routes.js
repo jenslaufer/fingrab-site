@@ -40,6 +40,11 @@ export const routes = [
         component: () => import('./components/BlogHome.vue'),
     },
     {
+        // Folded into the CSV guide on 2026-10-30 (Google never indexed it).
+        path: '/blog/yahoo-finance-data-to-excel',
+        redirect: '/blog/export-yahoo-finance-csv',
+    },
+    {
         path: '/blog/:slug',
         alias: '/blog/:slug.html',
         component: () => import('./components/BlogArticle.vue'),

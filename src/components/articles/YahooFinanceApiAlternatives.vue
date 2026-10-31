@@ -207,7 +207,7 @@ hist = stock.history(period="1y")  # Price history</code></pre>
     <ul>
         <li><strong>Ad-hoc research</strong> — you need data for 5-10 stocks, not 5,000</li>
         <li><strong>No coding setup</strong> — no Python, no API keys, no environment configuration</li>
-        <li><strong>Financial statements</strong> — income statements, balance sheets, cash flow in one click</li>
+        <li><strong>Price history in one click</strong> — OHLCV plus adjusted close, daily, weekly or monthly</li>
         <li><strong>Quick iteration</strong> — browse Yahoo Finance, export what you need, analyze in
             <router-link to="/blog/excel-stock-analysis">Excel</router-link> or
             <router-link to="/blog/stock-portfolio-tracker-google-sheets">Google Sheets</router-link></li>

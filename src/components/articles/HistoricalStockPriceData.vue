@@ -120,8 +120,8 @@
         stock page and click export.
     </p>
     <p>
-        Beyond OHLCV, FinGrab also exports financial statements, key statistics, and dividend history — data types
-        that most free APIs don't cover at all.
+        Each file also carries the adjusted close, which accounts for splits and dividends, so returns over long
+        periods are calculated on a consistent price series.
     </p>
 
     <h2>Get started</h2>

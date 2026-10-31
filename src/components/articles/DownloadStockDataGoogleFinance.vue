@@ -64,20 +64,18 @@
     <h2>Method 4: Use Yahoo Finance with a browser extension</h2>
     <p>
         Google Finance is great for quick lookups, but when you need downloadable data, Yahoo Finance
-        offers far more. Yahoo Finance has dedicated pages for historical prices, financial statements,
-        key statistics, and dividends — all exportable.
+        offers far more: full price history for stocks, ETFs and indices, back to the first trading day.
     </p>
     <p>
         <router-link to="/">FinGrab</router-link> is a Chrome extension that adds one-click CSV export
         to Yahoo Finance. Instead of fighting with Google Finance's limitations, you switch to Yahoo Finance
-        and export everything you need.
+        and export the price history you need.
     </p>
     <h3>What FinGrab exports from Yahoo Finance</h3>
     <ul>
         <li><strong>Historical prices</strong> — full OHLCV data for any date range</li>
-        <li><strong>Financial statements</strong> — income statements, balance sheets, cash flow statements</li>
-        <li><strong>Key statistics</strong> — valuation ratios, profitability metrics, growth rates</li>
-        <li><strong>Dividend history</strong> — payment dates and amounts</li>
+        <li><strong>Adjusted close</strong> — prices adjusted for splits and dividends</li>
+        <li><strong>Daily, weekly or monthly</strong> — one row per period</li>
     </ul>
     <h3>How it works</h3>
     <ol>
@@ -110,19 +108,9 @@
                     <td>Full history, one click</td>
                 </tr>
                 <tr>
-                    <td>Financial statements</td>
+                    <td>Adjusted close</td>
                     <td>Not available</td>
-                    <td>Income, balance sheet, cash flow</td>
-                </tr>
-                <tr>
-                    <td>Key statistics</td>
-                    <td>Limited</td>
-                    <td>Full export</td>
-                </tr>
-                <tr>
-                    <td>Bulk export</td>
-                    <td>No</td>
-                    <td>Multiple tickers supported</td>
+                    <td>Included</td>
                 </tr>
                 <tr>
                     <td>Coding required</td>
@@ -142,9 +130,8 @@
     </ul>
     <h3>Use Yahoo Finance + FinGrab when</h3>
     <ul>
-        <li>You need financial statements, not just prices</li>
         <li>You want clean CSV files for analysis in Excel, R, or Python</li>
-        <li>You need data for multiple stocks quickly</li>
+        <li>You need adjusted prices for return calculations</li>
         <li>You want
             <router-link to="/blog/historical-stock-price-data">historical stock price data</router-link>
             going back further than Google Finance supports</li>
@@ -153,7 +140,7 @@
     <h2>Get started</h2>
     <p>
         Google Finance is useful for quick quotes, but it was never built for data export. If you need
-        downloadable stock data — prices, financials, dividends — the fastest path is Yahoo Finance
+        downloadable price history, the fastest path is Yahoo Finance
         with <a :href="ctaUrl" target="_blank" rel="noopener">FinGrab</a>. Install it and export your
         first dataset in under two minutes.
     </p>

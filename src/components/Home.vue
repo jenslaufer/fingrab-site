@@ -198,9 +198,7 @@ const steps = [
 
 const features = [
     { title: 'Historical price data', desc: 'Open, High, Low, Close, Volume (OHLCV) for any time range.' },
-    { title: 'Financial statements', desc: 'Income statements, balance sheets, and cash flow data.' },
-    { title: 'Key statistics', desc: 'Ratios, valuation metrics, and fundamental data points.' },
-    { title: 'Dividend history', desc: 'Complete dividend payment records with ex-dates and amounts.' },
+    { title: 'Adjusted close', desc: 'Prices adjusted for splits and dividends, so long-range charts stay consistent.' },
     { title: 'Multiple time ranges', desc: 'Daily, weekly, or monthly data across custom date ranges.' },
 ]
 
