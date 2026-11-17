@@ -152,17 +152,17 @@ const storeUrl = STORE_URL
 const steps = [
     {
         title: 'Open any stock on Yahoo Finance',
-        desc: 'Look up a ticker on finance.yahoo.com the way you always do — stocks, ETFs, indices, or crypto. The purple FinGrab button sits in the top-right corner of every quote page.',
+        desc: 'Look up a ticker on finance.yahoo.com the way you always do — stocks, ETFs, indices, or crypto. The dark FinGrab button sits in the top-right corner of every quote page.',
         img: '/demo/step-1-yahoo-button.webp',
         imgHeight: 750,
-        alt: 'Yahoo Finance quote page for Apple (AAPL) with the FinGrab "Download Data for Ticker" button in the top-right corner',
+        alt: 'Yahoo Finance quote page for Apple (AAPL) with the FinGrab "Export CSV" button in the top-right corner',
     },
     {
         title: 'Click it — the ticker is already detected',
         desc: 'The export dialog opens with the symbol filled in. Pick a time period — six months up to maximum history, all of it available on the free exports too — and an interval: daily, weekly, or monthly candles. The data is fetched directly from Yahoo Finance and processed locally in your browser.',
         img: '/demo/step-2-export-dialog.webp',
         imgHeight: 750,
-        alt: 'FinGrab Historical Data Export dialog with the AAPL ticker auto-detected and time period and interval selectors',
+        alt: 'FinGrab export panel with the AAPL ticker auto-detected and time period and interval selectors',
     },
     {
         title: 'Download CSV — open it in Excel',
