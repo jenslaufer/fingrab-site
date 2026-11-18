@@ -1,14 +1,14 @@
 <template>
-    <div class="min-h-screen bg-slate-950 text-slate-100">
-        <header class="bg-brand2 py-12 px-4">
-            <div class="max-w-3xl mx-auto">
-                <router-link to="/blog" class="text-sm text-slate-400 hover:text-emerald-400 mb-4 inline-block">&larr; All articles</router-link>
-                <h1 class="text-3xl sm:text-4xl font-semibold tracking-tight">{{ article.title }}</h1>
-                <time class="text-sm text-slate-400 mt-2 block">{{ article.date }}</time>
-            </div>
+    <div class="fg-wrap grid grid-cols-12 gap-y-8 pt-16 pb-24 sm:gap-x-8 md:pt-24 md:pb-32">
+        <div class="col-span-12 lg:col-span-3">
+            <router-link to="/blog" class="fg-nav-link">&larr; All articles</router-link>
+        </div>
+        <header class="col-span-12 border-b border-line pb-12 lg:col-span-9">
+            <h1 class="max-w-4xl text-h2 font-semibold text-balance">{{ article.title }}</h1>
+            <time :datetime="article.date" class="fg-label mt-6 block tnum">{{ article.date }}</time>
         </header>
 
-        <main class="max-w-3xl mx-auto px-4 py-12">
+        <main class="col-span-12 pt-4 lg:col-span-9 lg:col-start-4">
             <article class="prose-blog">
                 <component :is="articleComponent" />
             </article>

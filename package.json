@@ -13,8 +13,7 @@
     "verify:quota": "node scripts/verify-live-quota.mjs"
   },
   "dependencies": {
-    "@fontsource-variable/merriweather": "^5.2.6",
-    "@fontsource-variable/montserrat": "^5.2.8",
+    "@fontsource-variable/inter": "^5.3.0",
     "@tailwindcss/vite": "^4.1.11",
     "@unhead/vue": "^2.0.19",
     "vue": "^3.5.24",

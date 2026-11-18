@@ -1,26 +1,15 @@
 <template>
-    <div class="min-h-screen bg-slate-950 text-slate-100">
-        <header class="bg-brand2 py-12 px-4">
-            <div class="max-w-3xl mx-auto">
-                <router-link to="/" class="text-sm text-slate-400 hover:text-emerald-400 mb-4 inline-block">&larr; Back to FinGrab.app</router-link>
-                <h1 class="text-3xl sm:text-4xl font-semibold tracking-tight">FinGrab Blog</h1>
-                <p class="text-slate-300 mt-2">Guides and tips for exporting and analyzing financial data.</p>
+    <div>
+        <header class="border-b border-line">
+            <div class="fg-wrap pt-16 pb-16 md:pt-24 md:pb-24">
+                <router-link to="/" class="fg-nav-link">&larr; Back to FinGrab.app</router-link>
+                <h1 class="mt-12 text-display font-semibold">FinGrab Blog</h1>
+                <p class="mt-6 max-w-measure text-lead text-ink-2">Guides and tips for exporting and analyzing financial data.</p>
             </div>
         </header>
 
-        <main class="max-w-3xl mx-auto px-4 py-12">
-            <div class="space-y-6">
-                <router-link
-                    v-for="article in articles"
-                    :key="article.slug"
-                    :to="`/blog/${article.slug}`"
-                    class="block rounded-xl border border-white/10 bg-white/5 p-6 hover:border-emerald-500/50 transition-colors"
-                >
-                    <time class="text-xs text-slate-500">{{ article.date }}</time>
-                    <h2 class="text-xl font-semibold mt-1 mb-2">{{ article.title }}</h2>
-                    <p class="text-sm text-slate-400">{{ article.description }}</p>
-                </router-link>
-            </div>
+        <main class="fg-wrap py-16 md:py-24">
+            <ArticleIndex :articles="articles" title-tag="h2" show-date class="max-w-4xl" />
         </main>
     </div>
 </template>
@@ -28,6 +17,7 @@
 <script setup>
 import { useHead } from '@unhead/vue'
 import { articles } from '../blog/articles.js'
+import ArticleIndex from './ArticleIndex.vue'
 
 useHead({
     title: 'FinGrab Blog – Guides for Financial Data Export',

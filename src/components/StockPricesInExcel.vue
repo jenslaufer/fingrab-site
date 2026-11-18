@@ -1,175 +1,156 @@
 <template>
-    <!-- Hero -->
-    <div class="bg-brand2 text-slate-100 px-4 pt-20 pb-16">
-        <div class="max-w-3xl mx-auto text-center">
-            <div
-                class="inline-flex items-center gap-2 px-3 py-1 mb-6 text-xs font-medium rounded-full border border-white/10 bg-white/5 backdrop-blur">
-                <span class="h-2 w-2 rounded-full bg-emerald-400 animate-pulse"></span>
-                <span>FinGrab.app • How-to</span>
+    <main>
+        <section class="fg-wrap grid grid-cols-12 gap-y-16 pt-16 pb-24 sm:gap-x-8 md:pt-24 md:pb-32">
+            <div class="col-span-12 lg:col-span-9">
+                <p class="fg-label mb-8">FinGrab.app • How-to</p>
+                <h1 class="text-display font-semibold text-balance">
+                    Get stock prices into Excel — without writing code
+                </h1>
+                <p class="mt-8 max-w-measure text-lead text-ink-2">
+                    No API key, no Python, no copy-paste. Two clicks on any Yahoo Finance page
+                    turn a year of price history into a clean CSV that opens straight in Excel,
+                    Google Sheets, or Numbers.
+                </p>
+                <StoreCta :url="storeUrl" cta="Add FinGrab to Chrome"
+                    :note="`${FREE_EXPORTS} free exports. No signup. Setup in under 2 minutes.`" class="mt-12" />
             </div>
 
-            <h1 class="text-3xl sm:text-4xl lg:text-5xl font-semibold tracking-tight mb-4">
-                Get stock prices into Excel — without writing code
-            </h1>
-
-            <p class="text-sm sm:text-base lg:text-lg text-slate-300 mb-8 leading-relaxed">
-                No API key, no Python, no copy-paste. Two clicks on any Yahoo Finance page
-                turn a year of price history into a clean CSV that opens straight in Excel,
-                Google Sheets, or Numbers.
-            </p>
-
-            <div class="flex flex-col items-center justify-center gap-3 mb-12">
-                <a :href="storeUrl" class="inline-flex items-center justify-center rounded-full px-6 py-3 text-lg font-semibold
-                 bg-emerald-500 hover:bg-emerald-400 text-black shadow-lg shadow-emerald-500/30
-                 transition-transform duration-150 hover:-translate-y-0.5">
-                    Add FinGrab to Chrome
-                </a>
-                <div class="text-xs sm:text-sm text-slate-400">
-                    {{ FREE_EXPORTS }} free exports. No signup. Setup in under 2 minutes.
-                </div>
-            </div>
-
-            <figure class="rounded-xl border border-white/10 overflow-hidden shadow-2xl">
+            <figure class="col-span-12 lg:col-span-10">
                 <img src="/demo/excel-demo.gif" width="800" height="500"
                     alt="Demo: exporting one year of AAPL daily prices from Yahoo Finance to CSV with the FinGrab Chrome extension"
-                    class="w-full" loading="eager" />
-                <figcaption class="bg-slate-950/80 text-xs text-slate-400 px-4 py-2 text-left">
+                    class="block h-auto w-full border border-line" loading="eager" />
+                <figcaption class="mt-4 max-w-measure text-ink-3">
                     Real screen captures: Apple (AAPL), 1 year of daily OHLCV data, exported as CSV — no code involved.
                 </figcaption>
             </figure>
-        </div>
-    </div>
+        </section>
 
-    <!-- Steps -->
-    <section class="bg-slate-900 text-slate-100 py-20 px-4">
-        <div class="max-w-4xl mx-auto">
-            <h2 class="text-2xl sm:text-3xl font-semibold text-center mb-12">Three steps, two clicks</h2>
-            <div class="space-y-16">
-                <div v-for="(step, i) in steps" :key="i" class="grid md:grid-cols-2 gap-8 items-center">
-                    <div :class="i % 2 === 1 ? 'md:order-2' : ''">
-                        <div
-                            class="w-10 h-10 mb-4 rounded-full bg-emerald-500/20 flex items-center justify-center text-emerald-400 text-lg font-bold">
-                            {{ i + 1 }}
+        <section class="border-t border-line">
+            <div class="fg-wrap py-24 md:py-32">
+                <SectionHeading number="01" title="Three steps, two clicks" class="mb-16" />
+                <ol class="border-t border-ink">
+                    <li v-for="(step, i) in steps" :key="step.title"
+                        class="grid grid-cols-12 gap-y-8 border-b border-line py-12 sm:gap-x-8">
+                        <div class="col-span-12 flex gap-4 lg:col-span-4">
+                            <span class="font-mono text-ink-3 tnum" aria-hidden="true">{{ i + 1 }}</span>
+                            <div>
+                                <h3 class="text-h3 font-semibold tracking-tight">{{ step.title }}</h3>
+                                <p class="mt-4 max-w-measure text-ink-2">{{ step.desc }}</p>
+                            </div>
                         </div>
-                        <h3 class="text-xl font-semibold mb-3">{{ step.title }}</h3>
-                        <p class="text-sm text-slate-400 leading-relaxed">{{ step.desc }}</p>
+                        <img :src="step.still.src" :alt="step.still.alt" :width="step.still.width"
+                            :height="step.still.height" loading="lazy"
+                            class="col-span-12 block h-auto w-full border border-line lg:col-span-8" />
+                    </li>
+                </ol>
+            </div>
+        </section>
+
+        <section class="bg-paper">
+            <div class="fg-wrap grid grid-cols-12 gap-y-12 py-24 sm:gap-x-8 md:py-32">
+                <SectionHeading number="02" title="What lands in your spreadsheet" class="col-span-12 lg:col-span-4">
+                    <p class="mt-4 max-w-measure-narrow text-ink-2">
+                        A plain CSV — the file format every spreadsheet opens natively. One row per trading day
+                        (or week, or month), ready for formulas, pivot tables, and charts.
+                    </p>
+                </SectionHeading>
+                <dl class="col-span-12 border-t border-ink lg:col-span-8">
+                    <div v-for="(feat, i) in facts" :key="feat.title"
+                        class="grid grid-cols-12 gap-y-2 border-b border-line-2 py-6 sm:gap-x-8">
+                        <dt class="col-span-12 flex gap-4 font-semibold sm:col-span-5">
+                            <span class="font-mono font-normal text-ink-3 tnum" aria-hidden="true">{{ pad(i + 1) }}</span>
+                            {{ feat.title }}
+                        </dt>
+                        <dd class="col-span-12 pl-8 text-ink-2 sm:col-span-7 sm:pl-0">{{ feat.desc }}</dd>
                     </div>
-                    <figure :class="i % 2 === 1 ? 'md:order-1' : ''"
-                        class="rounded-xl border border-white/10 overflow-hidden shadow-xl">
-                        <img :src="step.img" :alt="step.alt" class="w-full" loading="lazy" width="1200"
-                            :height="step.imgHeight" />
-                    </figure>
+                </dl>
+            </div>
+        </section>
+
+        <section>
+            <div class="fg-wrap grid grid-cols-12 gap-y-12 py-24 sm:gap-x-8 md:py-32">
+                <SectionHeading number="03" title="The other ways to do it" class="col-span-12 lg:col-span-4">
+                    <p class="mt-4 max-w-measure-narrow text-ink-2">
+                        All of these work. They just assume tools or patience you may not have.
+                    </p>
+                </SectionHeading>
+                <div class="col-span-12 border-t border-ink lg:col-span-8">
+                    <div v-for="alt in alternatives" :key="alt.title" class="border-b border-line py-6">
+                        <h3 class="font-semibold">{{ alt.title }}</h3>
+                        <p class="mt-2 max-w-measure text-ink-2">{{ alt.desc }}</p>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- What you get -->
-    <section class="bg-slate-950 text-slate-100 py-20 px-4">
-        <div class="max-w-4xl mx-auto">
-            <h2 class="text-2xl sm:text-3xl font-semibold text-center mb-6">What lands in your spreadsheet</h2>
-            <p class="text-sm sm:text-base text-slate-400 text-center max-w-2xl mx-auto mb-12">
-                A plain CSV — the file format every spreadsheet opens natively. One row per trading day
-                (or week, or month), ready for formulas, pivot tables, and charts.
-            </p>
-            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                <div v-for="feat in facts" :key="feat.title" class="rounded-xl border border-white/10 bg-white/5 p-6">
-                    <h3 class="font-semibold mb-2">{{ feat.title }}</h3>
-                    <p class="text-sm text-slate-400">{{ feat.desc }}</p>
+        <section class="border-t border-line">
+            <div class="fg-wrap grid grid-cols-12 gap-y-12 py-24 sm:gap-x-8 md:py-32">
+                <SectionHeading number="04" title="Frequently asked questions" class="col-span-12 lg:col-span-4" />
+                <div class="col-span-12 border-t border-ink lg:col-span-7">
+                    <div v-for="faq in faqs" :key="faq.q" class="border-b border-line py-6">
+                        <h3 class="font-semibold">{{ faq.q }}</h3>
+                        <p class="mt-2 max-w-measure text-ink-2">{{ faq.a }}</p>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Honest alternatives -->
-    <section class="bg-slate-900 text-slate-100 py-20 px-4">
-        <div class="max-w-4xl mx-auto">
-            <h2 class="text-2xl sm:text-3xl font-semibold text-center mb-6">The other ways to do it</h2>
-            <p class="text-sm sm:text-base text-slate-400 text-center max-w-2xl mx-auto mb-12">
-                All of these work. They just assume tools or patience you may not have.
-            </p>
-            <div class="space-y-4">
-                <div v-for="alt in alternatives" :key="alt.title"
-                    class="rounded-xl border border-white/10 bg-white/5 p-6">
-                    <h3 class="font-semibold mb-2">{{ alt.title }}</h3>
-                    <p class="text-sm text-slate-400 leading-relaxed">{{ alt.desc }}</p>
-                </div>
+        <section class="bg-paper">
+            <div class="fg-wrap py-24 md:py-32">
+                <h2 class="max-w-4xl text-display font-semibold">Try it on the next stock you look up</h2>
+                <p class="mt-6 max-w-measure text-lead text-ink-2">
+                    {{ FREE_EXPORTS }} free exports to see if it fits your workflow. No signup, no API key.
+                </p>
+                <StoreCta :url="storeUrl" cta="Add FinGrab to Chrome" class="mt-12" />
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- FAQ -->
-    <section class="bg-slate-950 text-slate-100 py-20 px-4">
-        <div class="max-w-3xl mx-auto">
-            <h2 class="text-2xl sm:text-3xl font-semibold text-center mb-12">Frequently asked questions</h2>
-            <div class="space-y-8">
-                <div v-for="faq in faqs" :key="faq.q">
-                    <h3 class="font-semibold mb-2">{{ faq.q }}</h3>
-                    <p class="text-sm text-slate-400 leading-relaxed">{{ faq.a }}</p>
-                </div>
+        <section>
+            <div class="fg-wrap grid grid-cols-12 gap-y-12 py-24 sm:gap-x-8 md:py-32">
+                <h3 class="col-span-12 text-h2 font-semibold lg:col-span-4">Keep reading</h3>
+                <ArticleIndex :articles="relatedGuides" title-tag="h4" class="col-span-12 lg:col-span-8" />
             </div>
-        </div>
-    </section>
+        </section>
+    </main>
 
-    <!-- CTA + related guides -->
-    <section class="bg-brand2 text-slate-100 py-20 px-4">
-        <div class="max-w-3xl mx-auto text-center">
-            <h2 class="text-2xl sm:text-3xl font-semibold mb-4">Try it on the next stock you look up</h2>
-            <p class="text-sm sm:text-base text-slate-400 mb-8">
-                {{ FREE_EXPORTS }} free exports to see if it fits your workflow. No signup, no API key.
-            </p>
-            <a :href="storeUrl" class="inline-flex items-center justify-center rounded-full px-6 py-3 text-lg font-semibold
-             bg-emerald-500 hover:bg-emerald-400 text-black shadow-lg shadow-emerald-500/30
-             transition-transform duration-150 hover:-translate-y-0.5 mb-16">
-                Add FinGrab to Chrome
-            </a>
-
-            <h3 class="text-lg font-semibold mb-6">Keep reading</h3>
-            <div class="grid sm:grid-cols-3 gap-4 text-left">
-                <router-link v-for="guide in relatedGuides" :key="guide.slug" :to="`/blog/${guide.slug}`"
-                    class="rounded-xl border border-white/10 bg-white/5 p-5 hover:bg-white/10 transition-colors">
-                    <div class="font-semibold text-sm mb-2">{{ guide.title }}</div>
-                    <div class="text-xs text-slate-400 leading-relaxed">{{ guide.description }}</div>
-                </router-link>
-            </div>
-
-            <nav class="mt-16 flex items-center justify-center gap-6 text-xs text-slate-500">
-                <router-link to="/" class="hover:text-slate-300 transition-colors">Home</router-link>
-                <router-link to="/blog" class="hover:text-slate-300 transition-colors">Blog</router-link>
-                <router-link to="/privacy" class="hover:text-slate-300 transition-colors">Privacy</router-link>
-            </nav>
-        </div>
-    </section>
+    <SiteFooter :links="footerLinks" />
 </template>
 
 <script setup>
 import { useHead } from '@unhead/vue'
 import { findArticle } from '../blog/articles.js'
 import { FREE_EXPORTS, STORE_URL } from '../config.js'
+import { STILLS } from '../stills.js'
+import ArticleIndex from './ArticleIndex.vue'
+import SectionHeading from './SectionHeading.vue'
+import SiteFooter from './SiteFooter.vue'
+import StoreCta from './StoreCta.vue'
 
 const storeUrl = STORE_URL
+
+const pad = n => String(n).padStart(2, '0')
+
+const footerLinks = [
+    { to: '/', label: 'Home' },
+    { to: '/blog', label: 'Blog' },
+    { to: '/privacy', label: 'Privacy' },
+]
 
 const steps = [
     {
         title: 'Open any stock on Yahoo Finance',
-        desc: 'Look up a ticker on finance.yahoo.com the way you always do — stocks, ETFs, indices, or crypto. The purple FinGrab button sits in the top-right corner of every quote page.',
-        img: '/demo/step-1-yahoo-button.webp',
-        imgHeight: 750,
-        alt: 'Yahoo Finance quote page for Apple (AAPL) with the FinGrab "Download Data for Ticker" button in the top-right corner',
+        desc: 'Look up a ticker on finance.yahoo.com the way you always do — stocks, ETFs, indices, or crypto. The dark FinGrab button sits in the top-right corner of every quote page.',
+        still: STILLS[0],
     },
     {
         title: 'Click it — the ticker is already detected',
         desc: 'The export dialog opens with the symbol filled in. Pick a time period — six months up to maximum history, all of it available on the free exports too — and an interval: daily, weekly, or monthly candles. The data is fetched directly from Yahoo Finance and processed locally in your browser.',
-        img: '/demo/step-2-export-dialog.webp',
-        imgHeight: 750,
-        alt: 'FinGrab Historical Data Export dialog with the AAPL ticker auto-detected and time period and interval selectors',
+        still: STILLS[1],
     },
     {
         title: 'Download CSV — open it in Excel',
         desc: 'One more click and the file is in your downloads folder, named like AAPL_1y_1d.csv. Double-click it and Excel opens a clean table: one row per trading day, seven tidy columns, no cleanup needed.',
-        img: '/demo/step-3-csv-result.webp',
-        imgHeight: 754,
-        alt: 'The exported CSV opened as a spreadsheet: date, open, high, low, close, adjusted close, and volume columns with one year of AAPL data',
+        still: STILLS[2],
     },
 ]
 

@@ -1,169 +1,133 @@
 <template>
-    <!-- Hero -->
-    <div class="min-h-screen bg-linear-to-b bg-brand2 text-slate-100 flex items-center justify-center px-4">
-        <div class="max-w-2xl w-full text-center">
-            <div
-                class="inline-flex items-center gap-2 px-3 py-1 mb-6 text-xs font-medium rounded-full border border-white/10 bg-white/5 backdrop-blur">
-                <span class="h-2 w-2 rounded-full bg-emerald-400 animate-pulse"></span>
-                <span>{{ badge }}</span>
-            </div>
-
-            <h1 class="text-sm tracking-[0.25em] uppercase text-slate-400 mb-2">
-                {{ productName }}
+    <header class="sticky top-0 z-10 border-b border-line bg-white">
+        <div class="fg-wrap flex h-16 items-center justify-between gap-8">
+            <h1>
+                <a href="#top" class="flex items-center gap-2 font-semibold tracking-tight">
+                    <FinGrabMark :size="24" />
+                    {{ productName }}
+                </a>
             </h1>
-
-            <h2 class="text-3xl sm:text-4xl lg:text-5xl font-semibold tracking-tight mb-4">
-                {{ headline }}
-            </h2>
-
-            <p class="text-sm sm:text-base lg:text-lg text-slate-300 mb-8 leading-relaxed">
-                {{ uvp }}
-            </p>
-
-            <div class="flex flex-col items-center justify-center gap-3">
-                <a :href="url" class="inline-flex items-center justify-center rounded-full px-6 py-3 text-lg font-semibold
-                 bg-emerald-500 hover:bg-emerald-400 text-black shadow-lg shadow-emerald-500/30
-                 transition-transform duration-150 hover:-translate-y-0.5">
-                    {{ cta }}
-                </a>
-                <div class="text-xs sm:text-sm text-slate-400">
-                    {{ ctaFooter }}
-                </div>
-            </div>
+            <nav class="hidden items-center gap-8 text-ink-2 md:flex" aria-label="Sections">
+                <a v-for="item in sections" :key="item.href" :href="item.href"
+                    class="transition-colors duration-150 ease-snap hover:text-ink">{{ item.label }}</a>
+                <router-link to="/blog" class="transition-colors duration-150 ease-snap hover:text-ink">Blog</router-link>
+            </nav>
+            <a :href="url" class="fg-link font-semibold">Add to Chrome</a>
         </div>
-    </div>
+    </header>
 
-    <!-- How it works -->
-    <section class="bg-slate-900 text-slate-100 py-20 px-4">
-        <div class="max-w-4xl mx-auto">
-            <h2 class="text-2xl sm:text-3xl font-semibold text-center mb-12">How it works</h2>
-            <div class="grid md:grid-cols-3 gap-8">
-                <div v-for="(step, i) in steps" :key="i" class="text-center">
-                    <div class="w-12 h-12 mx-auto mb-4 rounded-full bg-emerald-500/20 flex items-center justify-center text-emerald-400 text-xl font-bold">
-                        {{ i + 1 }}
+    <main id="top">
+        <section class="fg-wrap grid grid-cols-12 gap-y-16 pt-16 pb-24 sm:gap-x-8 md:pt-24 md:pb-32">
+            <div class="col-span-12 lg:col-span-7">
+                <p class="fg-label mb-8">{{ badge }}</p>
+                <h2 class="text-display font-semibold text-balance">{{ headline }}</h2>
+                <p class="mt-8 max-w-measure text-lead text-ink-2">{{ uvp }}</p>
+                <StoreCta :url="url" :cta="cta" :note="ctaFooter" class="mt-12" />
+            </div>
+            <HeroSpecimen class="col-span-12 lg:col-span-5 lg:mt-16" />
+        </section>
+
+        <section id="how" class="border-t border-line">
+            <div class="fg-wrap grid grid-cols-12 gap-y-12 py-24 sm:gap-x-8 md:py-32 lg:grid-rows-[auto_auto_1fr]">
+                <SectionHeading number="01" title="How it works" class="col-span-12 lg:col-span-4" />
+                <StepTabs :steps="steps" list-class="col-span-12 lg:col-span-4"
+                    panel-class="col-span-12 lg:col-span-8 lg:col-start-5 lg:row-span-3 lg:row-start-1 lg:pt-16" />
+                <p class="col-span-12 self-start lg:col-span-4">
+                    <router-link to="/stock-prices-in-excel" class="fg-link">
+                        See it live: get stock prices into Excel in two clicks →
+                    </router-link>
+                </p>
+            </div>
+        </section>
+
+        <section class="border-t border-line">
+            <div class="fg-wrap grid grid-cols-12 gap-y-12 py-24 sm:gap-x-8 md:py-32">
+                <SectionHeading number="02" title="What you can export" class="col-span-12 lg:col-span-4" />
+                <dl class="col-span-12 border-t border-ink lg:col-span-8">
+                    <div v-for="(feat, i) in features" :key="feat.title"
+                        class="grid grid-cols-12 gap-y-2 border-b border-line py-6 sm:gap-x-8">
+                        <dt class="col-span-12 flex gap-4 font-semibold sm:col-span-5">
+                            <span class="font-mono font-normal text-ink-3 tnum" aria-hidden="true">{{ pad(i + 1) }}</span>
+                            {{ feat.title }}
+                        </dt>
+                        <dd class="col-span-12 pl-8 text-ink-2 sm:col-span-7 sm:pl-0">{{ feat.desc }}</dd>
                     </div>
-                    <h3 class="font-semibold mb-2">{{ step.title }}</h3>
-                    <p class="text-sm text-slate-400">{{ step.desc }}</p>
+                </dl>
+            </div>
+        </section>
+
+        <section class="bg-paper">
+            <div class="fg-wrap py-24 md:py-32">
+                <SectionHeading number="03" title="Use cases" class="mb-16" />
+                <div class="grid grid-cols-1 border-t border-line-2 md:grid-cols-3">
+                    <article v-for="(uc, i) in useCases" :key="uc.title"
+                        :class="['py-8 md:py-0 md:pt-8', i < useCases.length - 1 ? 'border-b border-line-2 md:border-b-0' : '',
+                            i > 0 ? 'md:border-l md:border-line-2 md:pl-8' : '', i < useCases.length - 1 ? 'md:pr-8' : '']">
+                        <h3 class="text-h3 font-semibold tracking-tight">{{ uc.title }}</h3>
+                        <p class="mt-4 max-w-measure-narrow text-ink-2">{{ uc.desc }}</p>
+                    </article>
                 </div>
             </div>
-            <p class="text-center mt-10 text-sm">
-                <router-link to="/stock-prices-in-excel"
-                    class="text-emerald-400 hover:text-emerald-300 transition-colors">
-                    See it live: get stock prices into Excel in two clicks →
-                </router-link>
-            </p>
-        </div>
-    </section>
+        </section>
 
-    <!-- What you can export -->
-    <section class="bg-slate-950 text-slate-100 py-20 px-4">
-        <div class="max-w-4xl mx-auto">
-            <h2 class="text-2xl sm:text-3xl font-semibold text-center mb-12">What you can export</h2>
-            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                <div v-for="feat in features" :key="feat.title"
-                     class="rounded-xl border border-white/10 bg-white/5 p-6">
-                    <h3 class="font-semibold mb-2">{{ feat.title }}</h3>
-                    <p class="text-sm text-slate-400">{{ feat.desc }}</p>
+        <ReviewWall id="reviews" number="04" :reviews="testimonials" :reviews-url="reviewsUrl" lead="Ben Victor" />
+
+        <section id="faq">
+            <div class="fg-wrap grid grid-cols-12 gap-y-12 py-24 sm:gap-x-8 md:py-32">
+                <SectionHeading number="05" title="Frequently asked questions" class="col-span-12 lg:col-span-4" />
+                <div class="col-span-12 border-t border-ink lg:col-span-7">
+                    <details v-for="(faq, i) in faqs" :key="faq.q" class="group border-b border-line" :open="i === 0">
+                        <summary
+                            class="flex cursor-pointer list-none items-center justify-between gap-8 py-6 font-semibold transition-colors duration-150 ease-snap hover:text-ink-2 focus-visible:-outline-offset-2">
+                            {{ faq.q }}
+                            <span aria-hidden="true"
+                                class="font-mono text-h3 font-normal text-ink-3 transition-transform duration-200 ease-fold group-open:rotate-45">+</span>
+                        </summary>
+                        <p class="max-w-measure pb-6 text-ink-2">{{ faq.a }}</p>
+                    </details>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Use cases -->
-    <section class="bg-slate-900 text-slate-100 py-20 px-4">
-        <div class="max-w-4xl mx-auto">
-            <h2 class="text-2xl sm:text-3xl font-semibold text-center mb-12">Use cases</h2>
-            <div class="grid md:grid-cols-3 gap-8">
-                <div v-for="uc in useCases" :key="uc.title"
-                     class="rounded-xl border border-white/10 bg-white/5 p-6">
-                    <h3 class="font-semibold mb-2">{{ uc.title }}</h3>
-                    <p class="text-sm text-slate-400">{{ uc.desc }}</p>
+        <section class="border-t border-line">
+            <div class="fg-wrap grid grid-cols-12 gap-y-12 py-24 sm:gap-x-8 md:py-32">
+                <SectionHeading number="06" title="Guides & tutorials" class="col-span-12 lg:col-span-4">
+                    <p class="mt-4 max-w-measure-narrow text-ink-2">Free, no-code walkthroughs for getting financial data into your spreadsheet.</p>
+                </SectionHeading>
+                <div class="col-span-12 lg:col-span-8">
+                    <ArticleIndex :articles="featuredGuides" />
+                    <p class="mt-8">
+                        <router-link to="/blog" class="fg-link">Browse all guides →</router-link>
+                    </p>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Reviews / social proof -->
-    <section class="bg-slate-950 text-slate-100 py-20 px-4">
-        <div class="max-w-4xl mx-auto">
-            <h2 class="text-2xl sm:text-3xl font-semibold text-center mb-4">Loved by analysts and investors</h2>
-            <p class="text-center text-sm text-slate-400 mb-12">Real reviews from the Chrome Web Store.</p>
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-                <figure v-for="t in testimonials" :key="t.author"
-                        class="rounded-xl border border-white/10 bg-white/5 p-6">
-                    <div class="text-emerald-400 mb-3" aria-label="5 out of 5 stars">★★★★★</div>
-                    <blockquote class="text-slate-200 leading-relaxed">“{{ t.quote }}”</blockquote>
-                    <figcaption class="mt-4 text-sm text-slate-400">{{ t.author }} · Chrome Web Store</figcaption>
-                </figure>
+        <section class="bg-paper">
+            <div class="fg-wrap py-24 md:py-32">
+                <h2 class="max-w-4xl text-display font-semibold">Start exporting financial data</h2>
+                <p class="mt-6 max-w-measure text-lead text-ink-2">Install FinGrab and download your first dataset in under 2 minutes.</p>
+                <StoreCta :url="url" :cta="cta" class="mt-12" />
             </div>
-            <div class="text-center mt-10">
-                <a :href="reviewsUrl" target="_blank" rel="noopener"
-                   class="text-sm text-emerald-400 hover:text-emerald-300 underline underline-offset-2">
-                    Read all reviews on the Chrome Web Store
-                </a>
-            </div>
-        </div>
-    </section>
+        </section>
+    </main>
 
-    <!-- FAQ -->
-    <section class="bg-slate-900 text-slate-100 py-20 px-4">
-        <div class="max-w-2xl mx-auto">
-            <h2 class="text-2xl sm:text-3xl font-semibold text-center mb-12">Frequently asked questions</h2>
-            <div class="space-y-4">
-                <details v-for="faq in faqs" :key="faq.q"
-                         class="rounded-xl border border-white/10 bg-white/5 p-4 group">
-                    <summary class="font-semibold cursor-pointer list-none flex items-center justify-between">
-                        {{ faq.q }}
-                        <span class="text-slate-500 group-open:rotate-45 transition-transform text-xl">+</span>
-                    </summary>
-                    <p class="mt-3 text-sm text-slate-400">{{ faq.a }}</p>
-                </details>
-            </div>
-        </div>
-    </section>
-
-    <!-- Guides / blog -->
-    <section class="bg-slate-950 text-slate-100 py-20 px-4">
-        <div class="max-w-4xl mx-auto">
-            <h2 class="text-2xl sm:text-3xl font-semibold text-center mb-4">Guides &amp; tutorials</h2>
-            <p class="text-center text-sm text-slate-400 mb-12">Free, no-code walkthroughs for getting financial data into your spreadsheet.</p>
-            <div class="grid sm:grid-cols-3 gap-6">
-                <router-link v-for="guide in featuredGuides" :key="guide.slug" :to="`/blog/${guide.slug}`"
-                             class="block rounded-xl border border-white/10 bg-white/5 p-6 hover:border-emerald-500/40 transition-colors">
-                    <h3 class="font-semibold mb-2">{{ guide.title }}</h3>
-                    <p class="text-sm text-slate-400">{{ guide.description }}</p>
-                </router-link>
-            </div>
-            <div class="text-center mt-10">
-                <router-link to="/blog" class="text-sm text-emerald-400 hover:text-emerald-300 underline underline-offset-2">
-                    Browse all guides →
-                </router-link>
-            </div>
-        </div>
-    </section>
-
-    <!-- Final CTA -->
-    <section class="bg-brand2 text-slate-100 py-20 px-4">
-        <div class="max-w-2xl mx-auto text-center">
-            <h2 class="text-2xl sm:text-3xl font-semibold mb-4">Start exporting financial data</h2>
-            <p class="text-slate-300 mb-8">Install FinGrab and download your first dataset in under 2 minutes.</p>
-            <a :href="url" class="inline-flex items-center justify-center rounded-full px-6 py-3 text-lg font-semibold
-                 bg-emerald-500 hover:bg-emerald-400 text-black shadow-lg shadow-emerald-500/30
-                 transition-transform duration-150 hover:-translate-y-0.5">
-                {{ cta }}
-            </a>
-            <div class="mt-12 text-xs text-slate-500 flex items-center justify-center gap-4">
-                <router-link to="/blog" class="hover:text-slate-300 underline underline-offset-2">Blog</router-link>
-                <router-link to="/privacy" class="hover:text-slate-300 underline underline-offset-2">Privacy Policy</router-link>
-            </div>
-        </div>
-    </section>
+    <SiteFooter :product-name="productName" />
 </template>
 <script setup>
 import { useHead } from '@unhead/vue'
 import { findArticle } from '../blog/articles.js'
 import { FREE_EXPORTS } from '../config.js'
 import { STORE_REVIEWS as testimonials } from '../reviews.js'
+import { STILLS } from '../stills.js'
+import ArticleIndex from './ArticleIndex.vue'
+import FinGrabMark from './FinGrabMark.vue'
+import HeroSpecimen from './HeroSpecimen.vue'
+import ReviewWall from './ReviewWall.vue'
+import SectionHeading from './SectionHeading.vue'
+import SiteFooter from './SiteFooter.vue'
+import StepTabs from './StepTabs.vue'
+import StoreCta from './StoreCta.vue'
 
 const props = defineProps({
     badge: { type: String, required: true },
@@ -181,6 +145,14 @@ useHead({
 
 const reviewsUrl = props.url ? `${props.url}/reviews` : '#'
 
+const sections = [
+    { href: '#how', label: 'How it works' },
+    { href: '#reviews', label: 'Reviews' },
+    { href: '#faq', label: 'FAQ' },
+]
+
+const pad = n => String(n).padStart(2, '0')
+
 // Internal links from the indexed homepage into the blog. Titles/descriptions
 // come from articles.js (single source of truth) so they never drift. These
 // give Google a crawl path from the trusted homepage to specific articles.
@@ -194,7 +166,7 @@ const steps = [
     { title: 'Install the extension', desc: 'Add FinGrab from the Chrome Web Store. Takes less than a minute.' },
     { title: 'Open Yahoo Finance', desc: 'Navigate to any stock, ETF, or index on finance.yahoo.com.' },
     { title: 'Export as CSV', desc: 'Click the FinGrab icon to download raw data instantly.' },
-]
+].map((step, i) => ({ ...step, still: STILLS[i] }))
 
 const features = [
     { title: 'Historical price data', desc: 'Open, High, Low, Close, Volume (OHLCV) for any time range.' },
