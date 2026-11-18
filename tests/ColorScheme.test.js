@@ -29,7 +29,8 @@ const FILES = [...vueFiles(SRC), STYLE]
 const STOCK_HUE =
     /\b(?:slate|gray|zinc|neutral|stone|red|orange|amber|yellow|lime|green|emerald|teal|cyan|sky|blue|indigo|violet|purple|fuchsia|pink|rose)-\d{2,3}\b/
 const GRADIENT = /\bbg-(?:gradient|linear|radial|conic)-|(?:^|[\s:"'`])(?:from|via|to)-[a-z0-9[]/
-const BLUR = /\b(?:backdrop-)?blur\b|backdrop-filter|\bblur\(/
+// Utilities and CSS only — the English word "blur" in a comment is fine.
+const BLUR = /backdrop-(?:blur|filter)|\bblur-(?:xs|sm|md|lg|[23]?xl|none)\b|\bblur\(|class="[^"]*\bblur\b/
 const OLD_FONTS = /montserrat|merriweather/i
 const OLD_BRAND = /\bbrand[0-2]\b/
 
@@ -99,6 +100,8 @@ describe('control: the patterns catch the old scheme', () => {
         [GRADIENT, 'class="bg-linear-to-b from-indigo-600 to-violet-500"'],
         [GRADIENT, 'class="bg-ink to-transparent"'],
         [BLUR, 'class="bg-white/5 backdrop-blur"'],
+        [BLUR, 'class="blur-sm"'],
+        [BLUR, 'filter: blur(8px);'],
         [OLD_FONTS, '@import "@fontsource-variable/montserrat";'],
         [OLD_BRAND, 'class="bg-brand2"'],
     ])('%s matches %s', (pattern, sample) => {
@@ -109,6 +112,7 @@ describe('control: the patterns catch the old scheme', () => {
         'class="text-ink-2 border-line bg-paper"',
         'class="fg-link" to="/blog"',
         'Add FinGrab from the Chrome Web Store. Takes less than a minute.',
+        'sizes where the diagonal would blur.',
     ])('leaves the new scheme alone: %s', sample => {
         for (const p of [STOCK_HUE, GRADIENT, BLUR, OLD_FONTS, OLD_BRAND]) {
             expect(p.test(sample)).toBe(false)
