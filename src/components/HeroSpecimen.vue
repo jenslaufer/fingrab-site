@@ -8,7 +8,7 @@
             <span id="launcher-caption" class="fg-label">The FinGrab button on Yahoo Finance</span>
             <span aria-hidden="true"
                 class="inline-flex h-11 cursor-default select-none items-center gap-2 rounded-lg bg-ink pr-4 pl-2 text-sm font-semibold text-white shadow-launcher">
-                <FinGrabMark :size="28" tile="accent" />
+                <FinGrabMark :size="28" />
                 FinGrab
                 <span class="border-l border-white/30 pl-2 font-normal text-white/80">Export CSV</span>
             </span>
