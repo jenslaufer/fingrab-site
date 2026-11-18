@@ -95,6 +95,17 @@ describe('Home — concrete free-tier offer', () => {
         expect(text).not.toContain('basic exports')
     })
 
+    // Since extension 2.0.9 only 1y/2y/5y/max spend a free export; 6 months
+    // is free and unlimited. The FAQ said "full access to all time ranges"
+    // on the free exports and never mentioned the free range, which undersold
+    // the offer and did not match the panel the user then sees.
+    it('says which range stays free and which ranges spend the free exports', () => {
+        const text = mountHome().text()
+        expect(text).toMatch(/6 months[^.]*free, always/i)
+        expect(text).toMatch(new RegExp(`1 year, 2 years, 5 years and full history: ${FREE_EXPORTS} free exports`, 'i'))
+        expect(text).not.toContain('full access to all time ranges')
+    })
+
     it('surfaces the free-export count near the primary CTA footer', () => {
         // ctaFooter is passed as a prop; the page must render it.
         expect(mountHome().text()).toContain(`${FREE_EXPORTS} free exports`)
