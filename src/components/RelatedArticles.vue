@@ -1,11 +1,11 @@
 <template>
     <h2>Related Articles</h2>
-    <ul class="list-none pl-0 space-y-3">
-        <li v-for="article in related" :key="article.slug">
-            <router-link :to="'/blog/' + article.slug" class="text-blue-600 hover:underline">
+    <ul class="list-none border-t border-ink pl-0">
+        <li v-for="article in related" :key="article.slug" class="mb-0 border-b border-line py-4">
+            <router-link :to="'/blog/' + article.slug" class="font-semibold">
                 {{ article.title }}
             </router-link>
-            <p class="text-sm text-gray-500 mt-1 mb-0">{{ article.description }}</p>
+            <p class="mt-1 mb-0 text-ink-3">{{ article.description }}</p>
         </li>
     </ul>
 </template>
