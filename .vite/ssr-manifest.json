@@ -1,12 +1,7 @@
 {
   "\u0000plugin-vue:export-helper": [
-    "/assets/inter-cyrillic-ext-wght-normal-BOeWTOD4.woff2",
-    "/assets/inter-cyrillic-wght-normal-DqGufNeO.woff2",
-    "/assets/inter-greek-ext-wght-normal-DlzME5K_.woff2",
-    "/assets/inter-greek-wght-normal-CkhJZR-_.woff2",
-    "/assets/inter-vietnamese-wght-normal-CBcvBZtf.woff2",
-    "/assets/inter-latin-ext-wght-normal-DO1Apj_S.woff2",
-    "/assets/inter-latin-wght-normal-Dx4kXJAl.woff2"
+    "/assets/Home-CkR-UcyH.js",
+    "/assets/Home-CvT3Igqk.css"
   ],
   "\u0000vite/modulepreload-polyfill.js": [
     "/assets/inter-cyrillic-ext-wght-normal-BOeWTOD4.woff2",
@@ -27,7 +22,7 @@
     "/assets/inter-latin-wght-normal-Dx4kXJAl.woff2"
   ],
   "../../../../../demo/excel-demo.gif": [
-    "/assets/StockPricesInExcel-D5s9Xuo6.js"
+    "/assets/StockPricesInExcel-wiPcPFie.js"
   ],
   "index.html": [
     "/assets/inter-cyrillic-ext-wght-normal-BOeWTOD4.woff2",
@@ -210,88 +205,88 @@
     "/assets/inter-latin-wght-normal-Dx4kXJAl.woff2"
   ],
   "src/blog/articles.js": [
-    "/assets/articles-BYBfP4cO.js"
+    "/assets/articles-COkl3thl.js"
   ],
   "src/components/ArticleIndex.vue": [
-    "/assets/ArticleIndex-CubRdI5q.js"
+    "/assets/ArticleIndex-kpsg8B1r.js"
   ],
   "src/components/BlogArticle.vue": [
-    "/assets/BlogArticle-BJ_-yTDi.js"
+    "/assets/BlogArticle-DJsOSbkl.js"
   ],
   "src/components/BlogHome.vue": [
-    "/assets/BlogHome-CHXLrEbU.js"
+    "/assets/BlogHome-D3qM4vlB.js"
   ],
   "src/components/FinGrabMark.vue": [
-    "/assets/StoreCta-DM7CNtOn.js"
+    "/assets/StoreCta-tdFR3VxF.js"
   ],
   "src/components/HeroSpecimen.vue": [
-    "/assets/Home-CsYTTp_5.js",
-    "/assets/Home-BUnPsP69.css"
+    "/assets/Home-CkR-UcyH.js",
+    "/assets/Home-CvT3Igqk.css"
   ],
   "src/components/HeroSpecimen.vue?vue&type=style&index=0&scoped=7241bc9e&lang.css": [
-    "/assets/Home-CsYTTp_5.js",
-    "/assets/Home-BUnPsP69.css"
+    "/assets/Home-CkR-UcyH.js",
+    "/assets/Home-CvT3Igqk.css"
   ],
   "src/components/Home.vue": [
-    "/assets/Home-CsYTTp_5.js",
-    "/assets/Home-BUnPsP69.css"
+    "/assets/Home-CkR-UcyH.js",
+    "/assets/Home-CvT3Igqk.css"
   ],
   "src/components/PrivacyPolicy.vue": [
-    "/assets/PrivacyPolicy-DgRbtkMS.js"
+    "/assets/PrivacyPolicy-ZfQnIipf.js"
   ],
   "src/components/RelatedArticles.vue": [
-    "/assets/RelatedArticles-BjUtkxG8.js"
+    "/assets/RelatedArticles-xuP30JM0.js"
   ],
   "src/components/ReviewWall.vue": [
-    "/assets/Home-CsYTTp_5.js",
-    "/assets/Home-BUnPsP69.css"
+    "/assets/Home-CkR-UcyH.js",
+    "/assets/Home-CvT3Igqk.css"
   ],
   "src/components/SectionHeading.vue": [
-    "/assets/StoreCta-DM7CNtOn.js"
+    "/assets/StoreCta-tdFR3VxF.js"
   ],
   "src/components/SiteFooter.vue": [
-    "/assets/StoreCta-DM7CNtOn.js"
+    "/assets/StoreCta-tdFR3VxF.js"
   ],
   "src/components/StepTabs.vue": [
-    "/assets/Home-CsYTTp_5.js",
-    "/assets/Home-BUnPsP69.css"
+    "/assets/Home-CkR-UcyH.js",
+    "/assets/Home-CvT3Igqk.css"
   ],
-  "src/components/StepTabs.vue?vue&type=style&index=0&scoped=66376d31&lang.css": [
-    "/assets/Home-CsYTTp_5.js",
-    "/assets/Home-BUnPsP69.css"
+  "src/components/StepTabs.vue?vue&type=style&index=0&scoped=b553cc63&lang.css": [
+    "/assets/Home-CkR-UcyH.js",
+    "/assets/Home-CvT3Igqk.css"
   ],
   "src/components/StockPricesInExcel.vue": [
-    "/assets/StockPricesInExcel-D5s9Xuo6.js"
+    "/assets/StockPricesInExcel-wiPcPFie.js"
   ],
   "src/components/StoreCta.vue": [
-    "/assets/StoreCta-DM7CNtOn.js"
+    "/assets/StoreCta-tdFR3VxF.js"
   ],
   "src/components/articles/BestFreeStockScreeners.vue": [
-    "/assets/BestFreeStockScreeners-AohIWitN.js"
+    "/assets/BestFreeStockScreeners-ChHHEVD7.js"
   ],
   "src/components/articles/CompareStockPerformanceGuide.vue": [
-    "/assets/CompareStockPerformanceGuide-DOYCYQj1.js"
+    "/assets/CompareStockPerformanceGuide-BQmDJvcZ.js"
   ],
   "src/components/articles/DownloadStockDataGoogleFinance.vue": [
-    "/assets/DownloadStockDataGoogleFinance-CeE_nXLm.js"
+    "/assets/DownloadStockDataGoogleFinance-B85IJ-sw.js"
   ],
   "src/components/articles/ExcelStockAnalysis.vue": [
-    "/assets/ExcelStockAnalysis-CLS2TGxS.js"
+    "/assets/ExcelStockAnalysis-Bp6Zdr7T.js"
   ],
   "src/components/articles/ExportYahooFinanceCsv.vue": [
-    "/assets/ExportYahooFinanceCsv-Dn3j87Q7.js"
+    "/assets/ExportYahooFinanceCsv-Cwlg1Ov5.js"
   ],
   "src/components/articles/HistoricalStockPriceData.vue": [
-    "/assets/HistoricalStockPriceData-BjPDen_5.js"
+    "/assets/HistoricalStockPriceData-Dq03fO2t.js"
   ],
   "src/components/articles/StockPortfolioTrackerGoogleSheets.vue": [
-    "/assets/StockPortfolioTrackerGoogleSheets-jFOskDbp.js"
+    "/assets/StockPortfolioTrackerGoogleSheets-BdDnfqip.js"
   ],
   "src/components/articles/TechnicalAnalysisDataBeginners.vue": [
-    "/assets/TechnicalAnalysisDataBeginners-Bc6sEgZ3.js"
+    "/assets/TechnicalAnalysisDataBeginners-woax_hDO.js"
   ],
   "src/components/articles/YahooFinanceApiAlternatives.vue": [
-    "/assets/YahooFinanceApiAlternatives-okIVVhFd.js"
+    "/assets/YahooFinanceApiAlternatives-EIebO-gV.js"
   ],
   "src/config.js": [
     "/assets/inter-cyrillic-ext-wght-normal-BOeWTOD4.woff2",
@@ -312,8 +307,8 @@
     "/assets/inter-latin-wght-normal-Dx4kXJAl.woff2"
   ],
   "src/reviews.js": [
-    "/assets/Home-CsYTTp_5.js",
-    "/assets/Home-BUnPsP69.css"
+    "/assets/Home-CkR-UcyH.js",
+    "/assets/Home-CvT3Igqk.css"
   ],
   "src/routes.js": [
     "/assets/inter-cyrillic-ext-wght-normal-BOeWTOD4.woff2",
@@ -325,7 +320,16 @@
     "/assets/inter-latin-wght-normal-Dx4kXJAl.woff2"
   ],
   "src/stills.js": [
-    "/assets/StoreCta-DM7CNtOn.js"
+    "/assets/StoreCta-tdFR3VxF.js"
+  ],
+  "src/structuredData.js": [
+    "/assets/inter-cyrillic-ext-wght-normal-BOeWTOD4.woff2",
+    "/assets/inter-cyrillic-wght-normal-DqGufNeO.woff2",
+    "/assets/inter-greek-ext-wght-normal-DlzME5K_.woff2",
+    "/assets/inter-greek-wght-normal-CkhJZR-_.woff2",
+    "/assets/inter-vietnamese-wght-normal-CBcvBZtf.woff2",
+    "/assets/inter-latin-ext-wght-normal-DO1Apj_S.woff2",
+    "/assets/inter-latin-wght-normal-Dx4kXJAl.woff2"
   ],
   "src/style.css": [
     "/assets/inter-cyrillic-ext-wght-normal-BOeWTOD4.woff2",

@@ -1,39 +1,31 @@
-# FinGrab — Yahoo Finance Data Exporter
+# FinGrab
 
-> FinGrab is a free Chrome extension that exports historical OHLCV financial data from Yahoo Finance as CSV with a single click. No signup required, setup in under 2 minutes. All processing happens locally in your browser — no server, no data collection.
+> FinGrab is a Chrome extension that downloads historical prices (OHLCV) from Yahoo Finance as CSV files, for investors, researchers and traders who work in Excel, Google Sheets or their own analysis tools.
 
-## What FinGrab Does
+FinGrab adds a button to Yahoo Finance quote pages (stocks, ETFs, indices). One click exports date, open, high, low, close, adjusted close and volume as CSV, in daily, weekly or monthly intervals. The data comes straight from Yahoo Finance and is processed locally in the browser. No signup, no API key.
 
-FinGrab adds a floating overlay to Yahoo Finance quote pages (`finance.yahoo.com/quote/*`). Users select a time range and click to download historical data (Open, High, Low, Close, Volume) as a CSV file ready for Excel, Google Sheets, OpenOffice, or any analysis tool.
+Pricing: 6 months of prices are free, always, in every interval. 1 year, 2 years, 5 years and full history: 5 free exports, then the paid plan. Payment runs through ExtPay.
 
-**Free tier:** 15 exports
-**Paid tier:** Unlimited exports + extended time range access
+## Pages
 
-## Quick Links
+- [FinGrab home](https://fingrab.app/index.md): what FinGrab does, how it works, what it exports, FAQ
+- [Get stock prices into Excel without code](https://fingrab.app/stock-prices-in-excel.md): step-by-step walkthrough, CSV columns, alternatives, FAQ
 
-- [Install from Chrome Web Store](https://chromewebstore.google.com/detail/fingrab%E2%80%93yahoo-finance-exp/blajbhgoiomncfkpcfgiibcicifklgpm): Official extension download
-- [FinGrab.app](https://fingrab.app): Product website
-- [Privacy Policy](https://fingrab.app/privacy): Privacy and data handling details
-- [Contact](mailto:jens.laufer@solytics.de): Email support
+## Guides
 
-## How It Works
+- [How to Export Yahoo Finance Data to Excel or CSV](https://fingrab.app/blog/export-yahoo-finance-csv.md): Yahoo's download button needs a paid Gold plan. 4 ways to get Yahoo Finance prices into Excel or CSV: Power Query, Python, or the FinGrab extension.
+- [Historical Stock Price Data: Where to Find Free OHLCV Data](https://fingrab.app/blog/historical-stock-price-data.md): Overview of free sources for historical stock price data including OHLCV. Compare Yahoo Finance, Alpha Vantage, and browser-based export tools.
+- [Excel Stock Analysis: Import Financial Data Without Coding](https://fingrab.app/blog/excel-stock-analysis.md): Learn how to analyze stocks in Excel without coding or API keys. Get financial data into your spreadsheet the easy way.
+- [Best Free Stock Screeners 2026: Filter Stocks Like a Pro](https://fingrab.app/blog/best-free-stock-screeners.md): Compare the best free stock screeners including Finviz, Yahoo Finance, TradingView, and more. Find the right tool to filter stocks by fundamentals and technicals.
+- [How to Build a Stock Portfolio Tracker in Google Sheets](https://fingrab.app/blog/stock-portfolio-tracker-google-sheets.md): Build a stock portfolio tracker in Google Sheets in 6 steps: live GOOGLEFINANCE prices, gain/loss, dividends and a performance chart. Formulas included.
+- [Yahoo Finance API Alternatives: Free Financial Data Sources](https://fingrab.app/blog/yahoo-finance-api-alternatives.md): Alpha Vantage, Financial Modeling Prep, Twelve Data, Polygon.io, EODHD and yfinance compared: free-tier limits, coverage, and a no-code option.
+- [How to Download Stock Data from Google Finance](https://fingrab.app/blog/download-stock-data-google-finance.md): Google Finance has no download button. 4 ways to get the data anyway: GOOGLEFINANCE() in Sheets, copy and paste, the old API, or a CSV from Yahoo Finance.
+- [Technical Analysis for Beginners: Getting Your Data Right](https://fingrab.app/blog/technical-analysis-data-beginners.md): Learn what OHLCV data you need for technical analysis, where to find free stock data, and how to get clean data into Excel or Python.
+- [Compare Stock Performance: Side-by-Side Analysis Guide](https://fingrab.app/blog/compare-stock-performance-guide.md): How to compare stocks side by side with normalized returns, Sharpe Ratio, and drawdown analysis. Includes Excel formulas and a practical workflow.
 
-1. Install the FinGrab extension from the Chrome Web Store
-2. Navigate to any Yahoo Finance quote page (e.g., finance.yahoo.com/quote/AAPL)
-3. A floating overlay appears on the page
-4. Select your desired time range and click download
-5. CSV file downloads directly to your computer
+## Optional
 
-All data extraction, processing, and file generation happens entirely in your browser. FinGrab does not send data to any server or collect usage statistics.
-
-## Pricing
-
-FinGrab operates on a freemium model:
-- **Free:** 15 CSV exports, standard time ranges
-- **Paid:** Unlimited exports, access to longer time ranges
-
-Payment is handled securely through ExtPay. No credit card is stored by FinGrab.
-
-## Contact
-
-For issues, feature requests, or inquiries: jens.laufer@solytics.de
+- [Install FinGrab from the Chrome Web Store](https://chromewebstore.google.com/detail/fingrab%E2%80%93yahoo-finance-exp/blajbhgoiomncfkpcfgiibcicifklgpm)
+- [Privacy policy](https://fingrab.app/privacy.md): permissions and data handling
+- [Blog index](https://fingrab.app/blog.md)
+- [Contact](mailto:jens.laufer@solytics.de)
