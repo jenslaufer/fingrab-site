@@ -9,7 +9,7 @@
             class="group block w-full cursor-pointer border-t-2 border-ink py-6 text-left transition-colors duration-150 ease-snap focus-visible:-outline-offset-2 aria-[selected=false]:border-line aria-[selected=false]:hover:border-line-2"
             @click="selected = i" @keydown="onKey($event, i)">
             <span class="flex gap-4">
-                <span class="font-mono text-ink-3 tnum">{{ i + 1 }}</span>
+                <span class="font-mono text-ink-3 tnum" aria-hidden="true">{{ i + 1 }}</span>
                 <span>
                     <span class="block font-semibold text-ink group-aria-[selected=false]:text-ink-2">{{ step.title }}</span>
                     <span class="mt-2 block text-ink-2 group-aria-[selected=false]:text-ink-3">{{ step.desc }}</span>

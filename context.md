@@ -38,9 +38,18 @@ The blog is prerendered to static HTML at clean URLs so crawlers see real conten
 **Divergence guard** (the slug list is derived twice — sitemap import vs. config regex — and they must never disagree, or articles silently vanish from the static output while the sitemap still advertises them, with the build still exiting 0):
 - `articleSlugs()` **throws** if it parses zero slugs (e.g. a backtick/computed slug defeats the regex) — never returns `[]`.
 - `onFinished()` **throws** if `dist/index.html` is missing.
-- `tests/PrerenderSlugGuard.test.js` builds and asserts three slug sets are identical: the real import, the `articleSlugs()` regex, and the emitted `dist/blog/*.html` files.
+- `tests/PrerenderSlugGuard.test.js` asserts three slug sets are identical: the real import, the `articleSlugs()` regex, and the emitted `dist/blog/*.html` files.
 
-To add an article: append to `src/blog/articles.js` (and its `.vue` component). The sitemap, prerender routes, and guard test pick it up automatically.
+`npm test` builds `dist/` once first (`tests/build.setup.js`); tests that read the build share it. Never build inside a test file: parallel files race on `dist/`.
+
+To add an article: append to `src/blog/articles.js` (and its `.vue` component). The sitemap, prerender routes, llms.txt, Markdown copies and guard test pick it up automatically.
+
+## AI visibility
+- `prebuild` also writes `public/llms.txt` (`scripts/generate-llms.js`) from `articles.js` and `config.js`.
+- `onFinished()` writes a Markdown copy next to every prerendered page (`dist/x.html` -> `dist/x.md`, `scripts/markdown-copies.js`); llms.txt links them.
+- Site-wide JSON-LD (Organization + SoftwareApplication) lives in `src/structuredData.js`, set once in `App.vue`. Pages add their own block with key `ld-page` and reference the organization by `@id`.
+- `public/<32-hex>.txt` is the IndexNow key. Public by design.
+- `tests/AiVisibility.test.js` checks all of it in `dist/`.
 
 ## Deployment
 Automated via GitHub Actions on push to `main` branch.

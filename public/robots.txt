@@ -1,3 +1,21 @@
+# AI search and answer crawlers: always allowed
+User-agent: OAI-SearchBot
+User-agent: ChatGPT-User
+User-agent: Claude-SearchBot
+User-agent: Claude-User
+User-agent: PerplexityBot
+User-agent: Perplexity-User
+User-agent: Bingbot
+User-agent: Googlebot
+Allow: /
+
+# AI training crawlers: allowed (explicit decision, Jens, 2026-11-24)
+User-agent: GPTBot
+User-agent: ClaudeBot
+User-agent: Google-Extended
+User-agent: CCBot
+Allow: /
+
 User-agent: *
 Allow: /
 

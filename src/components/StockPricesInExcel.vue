@@ -121,6 +121,7 @@ import { useHead } from '@unhead/vue'
 import { findArticle } from '../blog/articles.js'
 import { FREE_EXPORTS, STORE_URL } from '../config.js'
 import { STILLS } from '../stills.js'
+import { faqPage, ldScript } from '../structuredData.js'
 import ArticleIndex from './ArticleIndex.vue'
 import SectionHeading from './SectionHeading.vue'
 import SiteFooter from './SiteFooter.vue'
@@ -185,7 +186,7 @@ const alternatives = [
 const faqs = [
     {
         q: 'Is FinGrab free?',
-        a: `You get ${FREE_EXPORTS} free exports — no signup, no credit card, and every time range from six months to maximum history is open on them. If it earns a place in your workflow, Pro lifts the export count.`,
+        a: `Yes, to start: you get ${FREE_EXPORTS} free exports — no signup, no credit card, and every time range from six months to maximum history is open on them. If it earns a place in your workflow, Pro lifts the export count.`,
     },
     {
         q: 'Do I need an API key or a Yahoo account?',
@@ -220,19 +221,6 @@ useHead({
                 `How to get stock prices into Excel without code, APIs, or copy-paste: two clicks on any Yahoo Finance page export historical prices as a clean CSV. ${FREE_EXPORTS} free exports.`,
         },
     ],
-    script: [
-        {
-            type: 'application/ld+json',
-            innerHTML: JSON.stringify({
-                '@context': 'https://schema.org',
-                '@type': 'FAQPage',
-                mainEntity: faqs.map(f => ({
-                    '@type': 'Question',
-                    name: f.q,
-                    acceptedAnswer: { '@type': 'Answer', text: f.a },
-                })),
-            }),
-        },
-    ],
+    script: [ldScript('ld-page', faqPage(faqs))],
 })
 </script>
