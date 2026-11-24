@@ -3,6 +3,7 @@ import { copyFileSync, existsSync, readFileSync } from 'node:fs'
 import { resolve } from 'node:path'
 import vue from '@vitejs/plugin-vue'
 import tailwindcss from '@tailwindcss/vite'
+import { writeMarkdownCopies } from './scripts/markdown-copies.js'
 
 // Read article slugs from the source text rather than importing articles.js:
 // that module dynamically imports .vue components, which esbuild cannot bundle
@@ -23,23 +24,23 @@ export function articleSlugs() {
   return slugs
 }
 
+// Every static route to prerender, expanding /blog/:slug from the article list
+// so each article becomes its own crawlable URL.
+const prerenderRoutes = () => [
+  '/',
+  '/privacy',
+  '/blog',
+  '/stock-prices-in-excel',
+  ...articleSlugs().map(slug => `/blog/${slug}`),
+]
+
 export default defineConfig({
   plugins: [
     vue(),
     tailwindcss()],
   // vite-ssg reads this block.
   ssgOptions: {
-    // Prerender every static route to real HTML, expanding /blog/:slug
-    // from the article list so each article becomes its own crawlable URL.
-    includedRoutes() {
-      return [
-        '/',
-        '/privacy',
-        '/blog',
-        '/stock-prices-in-excel',
-        ...articleSlugs().map(slug => `/blog/${slug}`),
-      ]
-    },
+    includedRoutes: prerenderRoutes,
     // GitHub Pages SPA fallback: any deep link that lacks a prerendered
     // file serves 404.html, which boots the SPA instead of hard-404ing.
     onFinished() {
@@ -51,6 +52,8 @@ export default defineConfig({
         throw new Error('onFinished(): dist/index.html missing — cannot create 404.html SPA fallback.')
       }
       copyFileSync(index, resolve(dist, '404.html'))
+      // Markdown twin of every page, linked from llms.txt.
+      writeMarkdownCopies(dist, prerenderRoutes(), 'https://fingrab.app')
     },
   },
 })

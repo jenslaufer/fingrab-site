@@ -70,16 +70,7 @@ describe('StockPricesInExcel — content', () => {
         expect(links.length).toBeGreaterThanOrEqual(2)
     })
 
-    it('embeds FAQPage JSON-LD for the FAQ section', () => {
-        // JSON-LD goes through useHead; assert on the component source so the
-        // test does not depend on head-rendering internals.
-        const src = readFileSync(
-            resolve(process.cwd(), 'src/components/StockPricesInExcel.vue'),
-            'utf-8'
-        )
-        expect(src).toContain('FAQPage')
-        expect(src).toContain('application/ld+json')
-    })
+    // FAQPage JSON-LD is checked in the built HTML: tests/AiVisibility.test.js.
 })
 
 describe('StockPricesInExcel — route wiring', () => {

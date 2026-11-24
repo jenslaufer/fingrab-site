@@ -21,6 +21,7 @@ import { computed, defineAsyncComponent } from 'vue'
 import { useRoute } from 'vue-router'
 import { useHead } from '@unhead/vue'
 import { findArticle, headTitle } from '../blog/articles.js'
+import { ORG_ID, ldScript } from '../structuredData.js'
 
 const route = useRoute()
 const article = computed(() => findArticle(route.params.slug))
@@ -37,21 +38,14 @@ useHead(computed(() => {
     return {
         title: headTitle(a),
         meta: [{ name: 'description', content: a.description }],
-        script: [{
-            type: 'application/ld+json',
-            innerHTML: JSON.stringify({
-                '@context': 'https://schema.org',
-                '@type': 'Article',
-                headline: a.title,
-                description: a.description,
-                datePublished: a.date,
-                publisher: {
-                    '@type': 'Organization',
-                    name: 'FinGrab',
-                    url: 'https://fingrab.app',
-                },
-            }),
-        }],
+        script: [ldScript('ld-page', {
+            '@context': 'https://schema.org',
+            '@type': 'Article',
+            headline: a.title,
+            description: a.description,
+            datePublished: a.date,
+            publisher: { '@id': ORG_ID },
+        })],
     }
 }))
 </script>

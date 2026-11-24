@@ -8,7 +8,7 @@
 // external forms which reject '#' fragments get (Chrome Web Store privacy
 // policy field), so it has to survive hydration. Guarded by
 // tests/HtmlUrlRoutes.test.js.
-import { FREE_EXPORTS, STORE_URL } from './config.js'
+import { FREE_EXPORTS, PRODUCT_SUMMARY, STORE_URL } from './config.js'
 
 export const routes = [
     {
@@ -16,7 +16,7 @@ export const routes = [
         props: {
             badge: 'FinGrab.app • Chrome Extension for Financial Data',
             headline: 'Grab financial raw data–in seconds, with one click',
-            uvp: 'Analyze financial data on your terms. Download raw data from Yahoo Finance with the FinGrab Chrome Extension—ready for Excel, Google Sheets, OpenOffice, or your favorite analysis tool',
+            uvp: `${PRODUCT_SUMMARY} Analyze financial data on your terms.`,
             cta: 'Add FinGrab.app to Chrome',
             ctaFooter: `${FREE_EXPORTS} free exports. No signup. Setup in under 2 minutes.`,
             productName: 'FinGrab.app',

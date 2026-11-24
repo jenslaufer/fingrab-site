@@ -78,3 +78,14 @@ export const EXTENSION_PERMISSIONS = [
  */
 export const STORE_URL =
     'https://chromewebstore.google.com/detail/fingrab%E2%80%93yahoo-finance-exp/blajbhgoiomncfkpcfgiibcicifklgpm'
+
+export const SITE_URL = 'https://fingrab.app'
+
+/**
+ * What FinGrab does and for whom, in one sentence an LLM can quote as is.
+ * The homepage lead, llms.txt and the JSON-LD description all use it.
+ * The audience comes from the homepage use cases: portfolio analysis,
+ * academic research, trading backtesting.
+ */
+export const PRODUCT_SUMMARY =
+    'FinGrab is a Chrome extension that downloads historical prices (OHLCV) from Yahoo Finance as CSV files, for investors, researchers and traders who work in Excel, Google Sheets or their own analysis tools.'

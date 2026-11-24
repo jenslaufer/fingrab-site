@@ -2,7 +2,6 @@
 // Runs in node, not jsdom: importing vite.config.js pulls in esbuild-backed
 // plugins, and jsdom's TextEncoder shim breaks esbuild.
 import { describe, it, expect, beforeAll } from 'vitest'
-import { execSync } from 'node:child_process'
 import { readdirSync, existsSync, readFileSync } from 'node:fs'
 import { resolve } from 'node:path'
 import { articleSlugs } from '../vite.config.js'
@@ -23,13 +22,12 @@ beforeAll(async () => {
     const { articles } = await import('../src/blog/articles.js')
     importedSlugs = articles.map(a => a.slug)
 
-    // (c) Fresh build, then read what vite-ssg actually prerendered.
-    execSync('npm run build', { cwd: process.cwd(), stdio: 'inherit' })
+    // (c) What vite-ssg actually prerendered (built by tests/build.setup.js).
     const blogDir = resolve(process.cwd(), 'dist/blog')
     distSlugs = readdirSync(blogDir)
         .filter(f => f.endsWith('.html'))
         .map(f => f.replace(/\.html$/, ''))
-}, 120_000)
+})
 
 describe('Prerender slug divergence guard', () => {
     it('parses at least one slug from articles.js via the vite.config regex', () => {

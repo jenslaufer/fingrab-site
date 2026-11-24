@@ -120,6 +120,7 @@ import { findArticle } from '../blog/articles.js'
 import { FREE_EXPORTS } from '../config.js'
 import { STORE_REVIEWS as testimonials } from '../reviews.js'
 import { STILLS } from '../stills.js'
+import { faqPage, ldScript } from '../structuredData.js'
 import ArticleIndex from './ArticleIndex.vue'
 import FinGrabMark from './FinGrabMark.vue'
 import HeroSpecimen from './HeroSpecimen.vue'
@@ -137,10 +138,6 @@ const props = defineProps({
     cta: { type: String, required: true },
     ctaFooter: { type: String, required: true },
     url: { type: String, required: false }
-})
-
-useHead({
-    title: `${props.productName}–${props.headline}`,
 })
 
 const reviewsUrl = props.url ? `${props.url}/reviews` : '#'
@@ -183,7 +180,12 @@ const useCases = [
 const faqs = [
     { q: 'Is FinGrab free?', a: `Yes. 6 months of prices are free, always, in every interval. 1 Year, 2 Years, 5 Years and full history: ${FREE_EXPORTS} free exports, then the paid plan. No signup required.` },
     { q: 'What data formats are supported?', a: 'CSV files compatible with Excel, Google Sheets, LibreOffice, Numbers, and any analysis tool that reads CSV.' },
-    { q: 'Does it work with all Yahoo Finance pages?', a: 'FinGrab works with individual stock, ETF, and index pages on finance.yahoo.com.' },
+    { q: 'Does it work with all Yahoo Finance pages?', a: 'It works on quote pages: individual stock, ETF, and index pages on finance.yahoo.com.' },
     { q: 'Is my data stored anywhere?', a: 'No. All processing happens locally in your browser. No data is sent to external servers.' },
 ]
+
+useHead({
+    title: `${props.productName}–${props.headline}`,
+    script: [ldScript('ld-page', faqPage(faqs))],
+})
 </script>
